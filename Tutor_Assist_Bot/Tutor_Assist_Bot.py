@@ -46,6 +46,7 @@ from requests import post
 from requests import codes
 import math
 import re
+import json
 try:
     from intent import Loki_online_course
     from intent import Loki_class_arrangement
@@ -61,8 +62,9 @@ except:
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
-USERNAME = ""
-LOKI_KEY = ""
+accountDICT = json.load(open("account.info",encoding="utf-8"))
+USERNAME = accountDICT["username"]
+LOKI_KEY = accountDICT["loki-key"]
 # 意圖過濾器說明
 # INTENT_FILTER = []        => 比對全部的意圖 (預設)
 # INTENT_FILTER = [intentN] => 僅比對 INTENT_FILTER 內的意圖
@@ -300,12 +302,5 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    # 測試所有意圖
-    testIntent()
-
-    # 測試其它句子
-    filterLIST = []
-    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
-    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
+    resultDICT=runLoki(["週一崇瑋請假"])
+    print(resultDICT)    

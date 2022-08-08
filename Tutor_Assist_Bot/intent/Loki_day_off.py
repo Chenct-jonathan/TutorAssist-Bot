@@ -16,6 +16,13 @@
 
 import json
 import os
+from ArticutAPI import Articut
+import re
+
+accountDICT = json.load(open("account.info",encoding="utf-8"))
+articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
+
+scheduleDICT = {"Mon":"", "Tue":"", "Wed":"", "Thurs":"", "Fri":"","Sat":"", "Sun":""}
 
 DEBUG_day_off = True
 try:
@@ -31,7 +38,9 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[XX][先]休息":
-        # write your code here
+        infoDICT = articut.parse(inputSTR, level = "lv3")
+        resultDICT["CancelTime"] = infoDICT["time"]
+        
         pass
 
     if utterance == "[XX][先]停課":
