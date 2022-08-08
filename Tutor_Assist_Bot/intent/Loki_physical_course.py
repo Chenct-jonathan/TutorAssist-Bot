@@ -30,7 +30,7 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[這周]回復實體喔":
+    if utterance == "[這周]恢復實體喔":
         # write your code here
         pass
 

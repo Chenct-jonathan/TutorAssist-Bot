@@ -48,16 +48,16 @@ import math
 import re
 try:
     from intent import Loki_online_course
-    from intent import Loki_day_off
     from intent import Loki_class_arrangement
     from intent import Loki_physical_course
     from intent import Loki_Warm_Blessings
+    from intent import Loki_day_off
 except:
     from .intent import Loki_online_course
-    from .intent import Loki_day_off
     from .intent import Loki_class_arrangement
     from .intent import Loki_physical_course
     from .intent import Loki_Warm_Blessings
+    from .intent import Loki_day_off
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
@@ -185,10 +185,6 @@ def runLoki(inputLIST, filterLIST=[]):
                 if lokiRst.getIntent(index, resultIndex) == "online_course":
                     resultDICT = Loki_online_course.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
-                # day_off
-                if lokiRst.getIntent(index, resultIndex) == "day_off":
-                    resultDICT = Loki_day_off.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
                 # class_arrangement
                 if lokiRst.getIntent(index, resultIndex) == "class_arrangement":
                     resultDICT = Loki_class_arrangement.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
@@ -200,6 +196,10 @@ def runLoki(inputLIST, filterLIST=[]):
                 # Warm_Blessings
                 if lokiRst.getIntent(index, resultIndex) == "Warm_Blessings":
                     resultDICT = Loki_Warm_Blessings.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # day_off
+                if lokiRst.getIntent(index, resultIndex) == "day_off":
+                    resultDICT = Loki_day_off.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
@@ -274,12 +274,6 @@ def testIntent():
     testLoki(inputLIST, ['online_course'])
     print("")
 
-    # day_off
-    print("[TEST] day_off")
-    inputLIST = ['xx休息','xx請假','今天休息','今天暫停','今天請假','xx今天休息','xx今天請假','xx暫停一次','xx請假一次','xx休息 一次','他暫停一次','xx今天先休息','xx今天先暫停','xx今天先請假','xx先暫停一次','今天給xx請假','今天不用來喔','今天暫停一次','今天請假一次','他先暫停一次','老師不用來喔','今天休息 一次','xx今天暫停一次','xx今天請假一次','今天xx暫停一次','今天xx請假一次','今天先讓xx休息','今天先讓xx請假','xx今天休息 一次','今天xx休息 一次','今天他暫停一次','今天先暫停一次','今天先請假一次','老師不用過來喔','今天先休息 一次','xx今天先暫停一次','xx今天先請假一次','今天xx先暫停一次','今天xx先請假一次','今天給xx暫停一次','今天給xx請假一次','今天讓xx暫停一次','今天讓xx請假一次','xx今天先休息 一次','今天xx先休息 一次','今天他先暫停一次','今天給xx休息 一次','今天給他暫停一次','今天老師不用來喔','今天讓xx休息 一次','今天讓他暫停一次','老師今天不用來喔','今天先給xx暫停一次','今天先給xx請假一次','今天先讓xx請假一次','今天給xx先請假一次','今天讓xx先請假一次','今天先給xx休息 一次','今天先給他暫停一次','今天先讓xx休息 一次','今天先讓xx暫停 一次','今天先讓他暫停一次','今天給xx先休息 一次','今天老師先不用來喔','今天讓xx先休息 一次','老師今天先不用來喔','今天不用來幫xx上課喔','今天先不用幫xx上課喔','今天先不用來幫xx上課喔','老師今天不用幫xx上課喔','今天老師不用來幫xx上課喔','老師今天不用來幫xx上課喔','老師今天先不用幫xx上課喔','老師今天先不用來幫xx上課喔']
-    testLoki(inputLIST, ['day_off'])
-    print("")
-
     # class_arrangement
     print("[TEST] class_arrangement")
     inputLIST = ['可以改周一8-10嗎?','周一可以改1-3上課嗎','可以換成禮拜二6-8上課嗎?','週日方便改下午2-4上課嗎?','老師早安:5月的上課日我想商量調整一下。']
@@ -288,7 +282,7 @@ def testIntent():
 
     # physical_course
     print("[TEST] physical_course")
-    inputLIST = ['這周回復實體喔']
+    inputLIST = ['這周恢復實體喔']
     testLoki(inputLIST, ['physical_course'])
     print("")
 
@@ -296,6 +290,12 @@ def testIntent():
     print("[TEST] Warm_Blessings")
     inputLIST = ['中秋節快樂','老師中秋節快樂','老師晚安~新年快樂','老師，你好中秋節快樂']
     testLoki(inputLIST, ['Warm_Blessings'])
+    print("")
+
+    # day_off
+    print("[TEST] day_off")
+    inputLIST = ['XX先休息','XX先停課','XX先暫停','XX先請假','先不用來','先讓XX休息','先讓XX停課','先讓XX暫停','先讓XX請假','今天先休息','今天先停課','今天先暫停','今天先請假','先不上課喔','弟弟先休息','弟弟先停課','弟弟先暫停','弟弟先請假','先不用過來喔','先讓弟弟休息','先讓弟弟停課','先讓弟弟暫停','先讓弟弟請假','先不用幫XX上課','先不用幫弟弟上課']
+    testLoki(inputLIST, ['day_off'])
     print("")
 
 

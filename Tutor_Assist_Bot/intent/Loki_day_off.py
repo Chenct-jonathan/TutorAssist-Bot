@@ -30,299 +30,103 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[xx][今天][先]休息":
+    if utterance == "[XX][先]休息":
         # write your code here
         pass
 
-    if utterance == "[xx][今天][先]休息 [一次]":
+    if utterance == "[XX][先]停課":
         # write your code here
         pass
 
-    if utterance == "[xx][今天][先]暫停":
+    if utterance == "[XX][先]暫停":
         # write your code here
         pass
 
-    if utterance == "[xx][今天][先]暫停[一次]":
+    if utterance == "[XX][先]請假":
         # write your code here
         pass
 
-    if utterance == "[xx][今天][先]請假":
+    if utterance == "[今天][先]休息":
         # write your code here
         pass
 
-    if utterance == "[xx][今天][先]請假[一次]":
+    if utterance == "[今天][先]停課":
         # write your code here
         pass
 
-    if utterance == "[xx][今天]休息":
+    if utterance == "[今天][先]暫停":
         # write your code here
         pass
 
-    if utterance == "[xx][今天]休息 [一次]":
+    if utterance == "[今天][先]請假":
         # write your code here
         pass
 
-    if utterance == "[xx][今天]暫停[一次]":
+    if utterance == "[先]不上課喔":
         # write your code here
         pass
 
-    if utterance == "[xx][今天]請假":
+    if utterance == "[先]不用[過]來喔":
         # write your code here
         pass
 
-    if utterance == "[xx][今天]請假[一次]":
+    if utterance == "[先]不用來":
         # write your code here
         pass
 
-    if utterance == "[xx][先]暫停[一次]":
+    if utterance == "[先]不用幫[XX]上課":
         # write your code here
         pass
 
-    if utterance == "[xx]休息":
+    if utterance == "[先]不用幫[弟弟]上課":
         # write your code here
         pass
 
-    if utterance == "[xx]休息 [一次]":
+    if utterance == "[先]讓[XX]休息":
         # write your code here
         pass
 
-    if utterance == "[xx]暫停[一次]":
+    if utterance == "[先]讓[XX]停課":
         # write your code here
         pass
 
-    if utterance == "[xx]請假":
+    if utterance == "[先]讓[XX]暫停":
         # write your code here
         pass
 
-    if utterance == "[xx]請假[一次]":
+    if utterance == "[先]讓[XX]請假":
         # write your code here
         pass
 
-    if utterance == "[今天][xx][先]休息 [一次]":
+    if utterance == "[先]讓[弟弟]休息":
         # write your code here
         pass
 
-    if utterance == "[今天][xx][先]暫停[一次]":
+    if utterance == "[先]讓[弟弟]停課":
         # write your code here
         pass
 
-    if utterance == "[今天][xx][先]請假[一次]":
+    if utterance == "[先]讓[弟弟]暫停":
         # write your code here
         pass
 
-    if utterance == "[今天][xx]休息 [一次]":
+    if utterance == "[先]讓[弟弟]請假":
         # write your code here
         pass
 
-    if utterance == "[今天][xx]暫停[一次]":
+    if utterance == "[弟弟][先]休息":
         # write your code here
         pass
 
-    if utterance == "[今天][xx]請假[一次]":
+    if utterance == "[弟弟][先]停課":
         # write your code here
         pass
 
-    if utterance == "[今天][他][先]暫停[一次]":
+    if utterance == "[弟弟][先]暫停":
         # write your code here
         pass
 
-    if utterance == "[今天][他]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]不用來幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]不用幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]給[xx]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]給[xx]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]給[xx]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]給[他]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]讓[xx]休息":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]讓[xx]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]讓[xx]暫停 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]讓[xx]請假":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]讓[xx]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][先]讓[他]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天][老師][先]不用來喔":
-        # write your code here
-        pass
-
-    if utterance == "[今天][老師]不用來喔":
-        # write your code here
-        pass
-
-    if utterance == "[今天][老師]不用來幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[今天]不用來喔":
-        # write your code here
-        pass
-
-    if utterance == "[今天]不用來幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[今天]休息":
-        # write your code here
-        pass
-
-    if utterance == "[今天]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]暫停":
-        # write your code here
-        pass
-
-    if utterance == "[今天]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]給[xx][先]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]給[xx][先]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]給[xx]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]給[xx]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]給[xx]請假":
-        # write your code here
-        pass
-
-    if utterance == "[今天]給[xx]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]給[他]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]請假":
-        # write your code here
-        pass
-
-    if utterance == "[今天]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]讓[xx][先]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]讓[xx][先]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]讓[xx]休息 [一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]讓[xx]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]讓[xx]請假[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[今天]讓[他]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[他][先]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[他]暫停[一次]":
-        # write your code here
-        pass
-
-    if utterance == "[老師][今天][先]不用來喔":
-        # write your code here
-        pass
-
-    if utterance == "[老師][今天][先]不用來幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[老師][今天][先]不用幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[老師][今天]不用來喔":
-        # write your code here
-        pass
-
-    if utterance == "[老師][今天]不用來幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[老師][今天]不用幫[xx]上課喔":
-        # write your code here
-        pass
-
-    if utterance == "[老師]不用[過]來喔":
-        # write your code here
-        pass
-
-    if utterance == "[老師]不用來喔":
+    if utterance == "[弟弟][先]請假":
         # write your code here
         pass
 
