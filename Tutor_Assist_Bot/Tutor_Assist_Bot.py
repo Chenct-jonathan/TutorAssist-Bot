@@ -302,5 +302,6 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    resultDICT=runLoki(["週一崇瑋請假"])
-    print(resultDICT)    
+    resultDICT=runLoki(["今天崇瑋先休息"])
+    for key, value in resultDICT.items():
+        print(key, ' : ', value)
