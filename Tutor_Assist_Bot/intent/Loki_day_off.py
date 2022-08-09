@@ -41,7 +41,8 @@ def getResult(inputSTR, utterance, args, resultDICT):
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
         resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
-        resultDICT["Student"] = infoDICT["event"][0][0]
+        #resultDICT["Student"] = infoDICT["event"][0][0]
+        #resultDICT["Entity"] = re.search(r'[\u4e00-\u9fff]+',"".join(map(str,nounStemLIST[0][0]))).group()
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         
         pass
@@ -50,7 +51,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
         resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
-        resultDICT["Student"] = infoDICT["event"][0][0]
+        #resultDICT["Student"] = infoDICT["event"][0][0]
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         
         pass
@@ -59,7 +60,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
         resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
-        resultDICT["Student"] = infoDICT["event"][0][0]
+        #resultDICT["Student"] = infoDICT["event"][0][0]
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         
         pass
@@ -68,31 +69,45 @@ def getResult(inputSTR, utterance, args, resultDICT):
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
         resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
-        resultDICT["Entity"] = infoDICT["event"][0][0]
+        #resultDICT["Entity"] = infoDICT["event"][0][0]
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         
         pass
 
     if utterance == "[今天][先]休息":
         infoDICT = articut.parse(inputSTR, level = "lv3")
-        
-        
+        resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
+        resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
+        resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         pass
 
     if utterance == "[今天][先]停課":
-        # write your code here
+        infoDICT = articut.parse(inputSTR, level = "lv3")
+        resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
+        resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
+        resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         pass
 
     if utterance == "[今天][先]暫停":
-        # write your code here
+        infoDICT = articut.parse(inputSTR, level = "lv3")
+        resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
+        resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
+        resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         pass
 
     if utterance == "[今天][先]請假":
-        # write your code here
+        infoDICT = articut.parse(inputSTR, level = "lv3")
+        resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
+        resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
+        resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
         pass
 
     if utterance == "[先]不上課喔":
-        # write your code here
+        infoDICT = articut.parse(inputSTR, level = "lv3")
+        resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
+        resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
+        #resultDICT["CancelKeyword"] = infoDICT["event"][0][1]        
+        
         pass
 
     if utterance == "[先]不用[過]來喔":
