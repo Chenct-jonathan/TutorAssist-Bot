@@ -18,6 +18,7 @@ import json
 import os
 from ArticutAPI import Articut
 import re
+from datetime import datetime
 
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
@@ -40,7 +41,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "[XX][先]休息":
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
-        resultDICT["CancelDate"] = re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group()
+        resultDICT["CancelDate"] = str(datetime.strptime(infoDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
         #resultDICT["Student"] = infoDICT["event"][0][0]
         #resultDICT["Entity"] = re.search(r'[\u4e00-\u9fff]+',"".join(map(str,nounStemLIST[0][0]))).group()
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
