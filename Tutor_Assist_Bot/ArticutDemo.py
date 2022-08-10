@@ -9,8 +9,8 @@ from datetime import datetime
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
 
-resultDICT = articut.parse("我想說今天崇瑋英文課先請假好了", level="lv2")
-infoDICT = articut.parse("我想說今天崇瑋英文課先請假好了", level="lv3")
+resultDICT = articut.parse("明天弟弟先請假好了", level="lv2")
+infoDICT = articut.parse("明天弟弟先請假好了", level="lv3")
 nounStemLIST = articut.getNounStemLIST(resultDICT)
 timeLIST = articut.NER.getTime(resultDICT)
 
@@ -36,12 +36,13 @@ for key, value in resultDICT.items():
     print(key, ' : ', value)
     
 print(nounStemLIST)
-print(re.search(r'[\u4e00-\u9fff]+',"".join(map(str,nounStemLIST[0][0]))).group())
-print(re.search(r'[\u4e00-\u9fff]+',"".join(map(str,timeLIST[0][0]))).group())
+#print(re.search(r'[\u4e00-\u9fff]+',"".join(map(str,nounStemLIST[0][0]))).group())
+#print(re.search(r'[\u4e00-\u9fff]+',"".join(map(str,timeLIST[0][0]))).group())
 
 print(re.search("[0-9]+-[0-9]+-[0-9]+","".join(infoDICT["time"][0][0]["datetime"])).group())
 #print(day)
 print(now)
 print(type(now))
 print(date_time_obj)
+print(infoDICT["event"][0][1])
 
