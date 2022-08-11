@@ -47,17 +47,18 @@ from requests import codes
 import math
 import re
 import json
+
 try:
-    from intent import Loki_online_course
-    from intent import Loki_class_arrangement
+    from intent import Loki_warm_blessing
     from intent import Loki_physical_course
-    from intent import Loki_Warm_Blessings
+    from intent import Loki_class_arrangement
+    from intent import Loki_online_course
     from intent import Loki_day_off
 except:
-    from .intent import Loki_online_course
-    from .intent import Loki_class_arrangement
+    from .intent import Loki_warm_blessing
     from .intent import Loki_physical_course
-    from .intent import Loki_Warm_Blessings
+    from .intent import Loki_class_arrangement
+    from .intent import Loki_online_course
     from .intent import Loki_day_off
 
 
@@ -183,21 +184,21 @@ def runLoki(inputLIST, filterLIST=[]):
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # online_course
-                if lokiRst.getIntent(index, resultIndex) == "online_course":
-                    resultDICT = Loki_online_course.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
-                # class_arrangement
-                if lokiRst.getIntent(index, resultIndex) == "class_arrangement":
-                    resultDICT = Loki_class_arrangement.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                # warm_blessing
+                if lokiRst.getIntent(index, resultIndex) == "warm_blessing":
+                    resultDICT = Loki_warm_blessing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
                 # physical_course
                 if lokiRst.getIntent(index, resultIndex) == "physical_course":
                     resultDICT = Loki_physical_course.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
-                # Warm_Blessings
-                if lokiRst.getIntent(index, resultIndex) == "Warm_Blessings":
-                    resultDICT = Loki_Warm_Blessings.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                # class_arrangement
+                if lokiRst.getIntent(index, resultIndex) == "class_arrangement":
+                    resultDICT = Loki_class_arrangement.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # online_course
+                if lokiRst.getIntent(index, resultIndex) == "online_course":
+                    resultDICT = Loki_online_course.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
                 # day_off
                 if lokiRst.getIntent(index, resultIndex) == "day_off":
@@ -270,16 +271,10 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # online_course
-    print("[TEST] online_course")
-    inputLIST = ['是否調整為視訊上課?','老師晚安，近日疫情嚴峻，為確保師生健康，是否調整為視訊上課?','老師午安，我們家有人卻診了，XX想請問老師這周是否維持同個時段上線上課呢?']
-    testLoki(inputLIST, ['online_course'])
-    print("")
-
-    # class_arrangement
-    print("[TEST] class_arrangement")
-    inputLIST = ['可以改周一8-10嗎?','周一可以改1-3上課嗎','可以換成禮拜二6-8上課嗎?','週日方便改下午2-4上課嗎?','老師早安:5月的上課日我想商量調整一下。']
-    testLoki(inputLIST, ['class_arrangement'])
+    # warm_blessing
+    print("[TEST] warm_blessing")
+    inputLIST = ['假期快樂','假期愉快','中秋節快樂','中秋節愉快']
+    testLoki(inputLIST, ['warm_blessing'])
     print("")
 
     # physical_course
@@ -288,10 +283,16 @@ def testIntent():
     testLoki(inputLIST, ['physical_course'])
     print("")
 
-    # Warm_Blessings
-    print("[TEST] Warm_Blessings")
-    inputLIST = ['中秋節快樂','老師中秋節快樂','老師晚安~新年快樂','老師，你好中秋節快樂']
-    testLoki(inputLIST, ['Warm_Blessings'])
+    # class_arrangement
+    print("[TEST] class_arrangement")
+    inputLIST = ['改8到10','改8至10','改周一8-10','可以改到9.嗎','改八點至十點','改成周日過來','能延後半小時','可以改到9:30嗎','可以提前到9.嗎','可以提早到9.嗎','可以改到九點嗎','能延後一小時半','能延後半個小時','這週可以改時間','可以提前到9:30嗎','可以提早到9:30嗎','可以提前到九點嗎','可以提早到九點嗎','可以改下午2-4上課','想要延後一小時半','想討論下週的時間','換成禮拜二6-8上課','上課日我想討論一下','想要延後一個半小時','這週上課可以改時間嗎','這週家教可以改時間嗎','上課日我想商量調整一下']
+    testLoki(inputLIST, ['class_arrangement'])
+    print("")
+
+    # online_course
+    print("[TEST] online_course")
+    inputLIST = ['可以改成線上','可以調整為視訊上課','是否調整為視訊上課','是否維持同個時段上線上課']
+    testLoki(inputLIST, ['online_course'])
     print("")
 
     # day_off
@@ -302,7 +303,7 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    resultDICT=runLoki(["老師明天先不用幫弟弟上課喔"])
+    resultDICT=runLoki(["老師明天我想說讓崇瑋先休息一天"])
     for key, value in resultDICT.items():
         print(key, ' : ', value)
         

@@ -45,7 +45,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
         #resultDICT["Student"] = infoDICT["event"][0][0]
         #resultDICT["Entity"] = re.search(r'[\u4e00-\u9fff]+',"".join(map(str,nounStemLIST[0][0]))).group()
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
-        
         pass
 
     if utterance == "[XX][先]停課":
@@ -54,7 +53,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
         resultDICT["CancelDate"] = str(datetime.strptime(infoDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
         #resultDICT["Student"] = infoDICT["event"][0][0]
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
-        
         pass
 
     if utterance == "[XX][先]暫停":
@@ -63,7 +61,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
         resultDICT["CancelDate"] = str(datetime.strptime(infoDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
         #resultDICT["Student"] = infoDICT["event"][0][0]
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
-        
         pass
 
     if utterance == "[XX][先]請假":
@@ -72,7 +69,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
         resultDICT["CancelDate"] = str(datetime.strptime(infoDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
         #resultDICT["Entity"] = infoDICT["event"][0][0]
         resultDICT["CancelKeyword"] = infoDICT["event"][0][1]
-        
         pass
 
     if utterance == "[今天][先]休息":
@@ -107,8 +103,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
         resultDICT["CancelDate"] = str(datetime.strptime(infoDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
-        resultDICT["CancelKeyword"] = "不上課"       
-        
+        resultDICT["CancelKeyword"] = "不上課"
         pass
 
     if utterance == "[先]不用[過]來喔":
@@ -119,14 +114,14 @@ def getResult(inputSTR, utterance, args, resultDICT):
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
         resultDICT["CancelDate"] = str(datetime.strptime(infoDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
-        resultDICT["CancelKeyword"] = "不用過去"   
+        resultDICT["CancelKeyword"] = "不用過去"
         pass
 
     if utterance == "[先]不用幫[XX]上課":
         infoDICT = articut.parse(inputSTR, level = "lv3")
         resultDICT["CancelTimeText"] = infoDICT["time"][0][0]["text"]
         resultDICT["CancelDate"] = str(datetime.strptime(infoDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
-        resultDICT["CancelKeyword"] = "不用過去"   
+        resultDICT["CancelKeyword"] = "不用過去"
         pass
 
     if utterance == "[先]不用幫[弟弟]上課":
