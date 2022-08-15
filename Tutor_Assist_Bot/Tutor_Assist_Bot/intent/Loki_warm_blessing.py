@@ -52,13 +52,15 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
     if utterance == "[假期][愉快]":
         infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        resultDICT["Holiday"] = re.search("<ENTITY_nouny>([^<]+)</ENTITY_nouny><MODIFIER>愉快</MODIFIER>", "".join(infoDICT["result_pos"])).group(1)
+        if len(args[1])<2:
+            resultDICT["Holiday"] = "unknown"
+        else :resultDICT["Holiday"] = re.search("((?<=<ENTITY_noun>)|(?<=<ENTITY_nouny>)|(?<=<UserDefined>))([^>]+)((?=</ENTITY_noun><MODIFIER>愉快</MODIFIER>)|(?=</ENTITY_nouny><MODIFIER>愉快</MODIFIER>)|(?=</UserDefined><MODIFIER>愉快</MODIFIER>))", "".join(infoDICT["result_pos"])).group(2)
         pass
 
     if utterance == "[假期]快樂":
         infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        #print(infoDICT)
-        resultDICT["Holiday"] = re.search("<ENTITY_nouny?>([^<]+)</ENTITY_nouny?><ENTITY_nouny>快樂</ENTITY_nouny>", "".join(infoDICT["result_pos"])).group(1)
+        print(infoDICT)
+        resultDICT["Holiday"] = re.search("((?<=<ENTITY_noun>)|(?<=<ENTITY_nouny>)|(?<=<UserDefined>))([^>]+)((?=</ENTITY_noun><ENTITY_nouny>快樂</ENTITY_nouny>)|(?=</ENTITY_nouny><ENTITY_nouny>快樂</ENTITY_nouny>)|(?=</UserDefined><ENTITY_nouny>快樂</ENTITY_nouny>))", "".join(infoDICT["result_pos"])).group(2)
         pass
 
     return resultDICT

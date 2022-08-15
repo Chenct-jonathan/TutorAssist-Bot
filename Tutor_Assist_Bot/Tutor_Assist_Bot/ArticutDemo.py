@@ -9,11 +9,26 @@ from datetime import datetime
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
 
-resultDICT = articut.parse("明天弟弟先請假好了", level="lv2")
+resultDICT = articut.parse("老師先不用來喔", level="lv3")
 userDefinedDict = json.load(open("./intent/USER_DEFINED.json",encoding="utf-8"))
-infoDICT = articut.parse("老師連假愉快喔", level="lv2", userDefinedDictFILE = "./intent/USER_DEFINED.json")
-nounStemLIST = articut.getNounStemLIST(resultDICT)
-timeLIST = articut.NER.getTime(infoDICT)
+
+for key, value in resultDICT.items():
+    print(key, ' : ', value)
+
+
+
+
+
+
+
+
+#outPutDICT = {}
+#outPutDICT["CancelDate"] = str(datetime.strptime(resultDICT["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S'))
+#outPutDICT["CancelTimeText"] = resultDICT["time"][0][0]["text"] 
+#outPutDICT["CancelKeyword"] = 
+#infoDICT = articut.parse("老師連假愉快喔", level="lv2", userDefinedDictFILE = "./intent/USER_DEFINED.json")
+#nounStemLIST = articut.getNounStemLIST(resultDICT)
+#timeLIST = articut.NER.getTime(infoDICT)
 
 #now = datetime.now()
 
@@ -32,13 +47,12 @@ timeLIST = articut.NER.getTime(infoDICT)
 #print(resultDICT["time"][0][0]["text"])
 #print(resultDICT["event"][0][1])
 
-demoSTR = articut.parse("我覺得今天先讓他休息好了!", level = "lv2")
+#demoSTR = articut.parse("我覺得今天先讓他休息好了!", level = "lv2")
 
-print(demoSTR)
-
-
-for key, value in infoDICT.items():
-    print(key, ' : ', value)
+#print(demoSTR)
+    
+#print(str(datetime.strptime(articut.parse("今天", level = "lv3")["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S')))
+#print(outPutDICT)
     
 #print(re.search("<ENTITY_nouny>([^<]+)</ENTITY_nouny><MODIFIER>愉快</MODIFIER>", "".join(infoDICT["result_pos"])).group(1))
     

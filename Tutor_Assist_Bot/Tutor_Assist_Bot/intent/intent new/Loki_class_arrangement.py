@@ -21,7 +21,7 @@ DEBUG_class_arrangement = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
-    userDefinedDICT = {}
+    userDefinedDICT = {"連假":["連假"]}
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
@@ -67,6 +67,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
         pass
 
     if utterance == "[可以]改到[九點]嗎":
+        # write your code here
+        pass
+
+    if utterance == "[時間][我]想商量調整一下":
         # write your code here
         pass
 
@@ -135,10 +139,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
         pass
 
     if utterance == "改成[周日]過來":
-        # write your code here
-        pass
-
-    if utterance == "[時間][我]想商量調整一下":
         # write your code here
         pass
 

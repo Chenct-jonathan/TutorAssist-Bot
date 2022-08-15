@@ -138,8 +138,4 @@ def getResult(inputSTR, utterance, args, resultDICT):
         # write your code here
         pass
 
-    if utterance == "[時間][我]想商量調整一下":
-        # write your code here
-        pass
-
     return resultDICT

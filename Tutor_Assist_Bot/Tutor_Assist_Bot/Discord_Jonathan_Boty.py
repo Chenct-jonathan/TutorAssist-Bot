@@ -8,7 +8,7 @@ import re
 from datetime import datetime
 from pprint import pprint
 
-#from <your_loki_main_program> import runLoki
+from Tutor_Assist_Bot import runLoki
 
 logging.basicConfig(level=logging.DEBUG)
 
