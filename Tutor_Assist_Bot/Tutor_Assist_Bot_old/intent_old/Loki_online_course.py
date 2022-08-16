@@ -21,7 +21,7 @@ DEBUG_online_course = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
-    userDefinedDICT = {"愉快":["愉快"],"連假":["連假"],"進班":["進班"]}
+    userDefinedDICT = {}
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
@@ -30,43 +30,19 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[先]恢復[線上]":
+    if utterance == "[可以]改成[線上]":
         # write your code here
         pass
 
-    if utterance == "[先]恢復視訊":
+    if utterance == "[可以]調整為視訊上課":
         # write your code here
         pass
 
-    if utterance == "[先]改成[線上]":
+    if utterance == "是否維持[同個時段][上]線上課":
         # write your code here
         pass
 
-    if utterance == "[先]改成視訊":
-        # write your code here
-        pass
-
-    if utterance == "[先]用[線上]":
-        # write your code here
-        pass
-
-    if utterance == "[先]用視訊":
-        # write your code here
-        pass
-
-    if utterance == "[先]維持[線上]":
-        # write your code here
-        pass
-
-    if utterance == "[先]維持視訊":
-        # write your code here
-        pass
-
-    if utterance == "[先]調整為[線上]":
-        # write your code here
-        pass
-
-    if utterance == "[先]調整為視訊":
+    if utterance == "是否調整為視訊上課":
         # write your code here
         pass
 

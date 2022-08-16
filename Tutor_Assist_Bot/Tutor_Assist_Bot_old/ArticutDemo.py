@@ -9,17 +9,11 @@ from datetime import datetime
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
 
-resultDICT = articut.parse("祝老師中秋節快樂", level="lv2")
+resultDICT = articut.parse("老師先不用來喔", level="lv3")
 userDefinedDict = json.load(open("./intent/USER_DEFINED.json",encoding="utf-8"))
 
-#for key, value in resultDICT.items():
-    #print(key, ' : ', value)
-    
-try:
-    holiday = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(resultDICT["result_pos"])).group(1)
-except:
-    holiday = "unknown"
-print(holiday)
+for key, value in resultDICT.items():
+    print(key, ' : ', value)
 
 
 

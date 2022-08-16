@@ -21,7 +21,7 @@ DEBUG_class_arrangement = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
-    userDefinedDICT = {"愉快":["愉快"],"連假":["連假"],"進班":["進班"]}
+    userDefinedDICT = {}
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
@@ -30,103 +30,115 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[15].[你][方便]嗎":
+    if utterance == "[可以]提[前]到[9].嗎":
         # write your code here
         pass
 
-    if utterance == "[15].[你]ok 嗎":
+    if utterance == "[可以]提[前]到[9]:[30]嗎":
         # write your code here
         pass
 
-    if utterance == "[15].[老師]ok嗎":
+    if utterance == "[可以]提[前]到[九點]嗎":
         # write your code here
         pass
 
-    if utterance == "[15].好嗎":
+    if utterance == "[可以]提早到[9].嗎":
         # write your code here
         pass
 
-    if utterance == "[七點]好嗎":
+    if utterance == "[可以]提早到[9]:[30]嗎":
         # write your code here
         pass
 
-    if utterance == "[三點][你]ok嗎":
+    if utterance == "[可以]提早到[九點]嗎":
         # write your code here
         pass
 
-    if utterance == "[三點][老師]ok嗎":
+    if utterance == "[可以]改[下午]2-4上課":
         # write your code here
         pass
 
-    if utterance == "[五點][你][可以]嗎":
+    if utterance == "[可以]改到[9].嗎":
         # write your code here
         pass
 
-    if utterance == "[五點][你][方便]嗎":
+    if utterance == "[可以]改到[9]:[30]嗎":
         # write your code here
         pass
 
-    if utterance == "[五點][老師][可以]嗎":
+    if utterance == "[可以]改到[九點]嗎":
         # write your code here
         pass
 
-    if utterance == "[五點][老師][方便]嗎":
+    if utterance == "[能]延[後][一小時][半]":
         # write your code here
         pass
 
-    if utterance == "[可以]改上課時間嗎":
+    if utterance == "[能]延[後][半][小時]":
         # write your code here
         pass
 
-    if utterance == "[可以]改時間嗎":
+    if utterance == "[能]延[後][半個][小時]":
         # write your code here
         pass
 
-    if utterance == "[提早][半][小時]":
+    if utterance == "[這週][可以]改[時間]":
         # write your code here
         pass
 
-    if utterance == "[禮拜天][可以]幫[XX]上課嗎":
+    if utterance == "[這週][家教][可以]改時間嗎":
         # write your code here
         pass
 
-    if utterance == "延[後][半][小時]":
+    if utterance == "[這週]上課[可以]改時間嗎":
         # write your code here
         pass
 
-    if utterance == "延[後]到[8].":
+    if utterance == "上課[日][我]想商量調整一下":
         # write your code here
         pass
 
-    if utterance == "延[後]到[八點]":
+    if utterance == "上課[日][我]想討論一下":
         # write your code here
         pass
 
-    if utterance == "提早到[8].":
+    if utterance == "想要延[後][一個半小時]":
         # write your code here
         pass
 
-    if utterance == "提早到[八點]":
+    if utterance == "想要延[後][一小時][半]":
         # write your code here
         pass
 
-    if utterance == "改[8].":
+    if utterance == "想討論[下週]的[時間]":
         # write your code here
         pass
 
-    if utterance == "改[八點]":
+    if utterance == "換成[禮拜二][6]-[8]上課":
         # write your code here
         pass
 
-    if utterance == "改到[8].":
+    if utterance == "改[8]到[10]":
         # write your code here
         pass
 
-    if utterance == "改到[八點]":
+    if utterance == "改[8]至[10]":
         # write your code here
         pass
 
-    if utterance == "需要調整時間嗎":
+    if utterance == "改[八點]至[十點]":
+        # write your code here
+        pass
+
+    if utterance == "改[周一][8]-[10]":
+        # write your code here
+        pass
+
+    if utterance == "改成[周日]過來":
+        # write your code here
+        pass
+
+    if utterance == "[時間][我]想商量調整一下":
         # write your code here
         pass
 
