@@ -313,10 +313,9 @@ if __name__ == "__main__":
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
-    resultDICT=runLoki(["老師崇瑋明天休息"])
-    for key, value in resultDICT.items():
-        print(key, ' : ', value)
+    resultDICT=runLoki(["老師明天請假人數太多我們先停課，你明天先不用來喔"])
+    #for key, value in resultDICT.items():
+        #print(key, ' : ', value)
         
-    
     print("\n感謝您通知")
     print(resultDICT)    

@@ -21,7 +21,15 @@ except:
     holiday = "unknown"
 print(holiday)
 
+#STR = "12345"
+#print(STR[1:3])
 
+infoDICT = articut.parse("崇瑋早上發燒，下午英文課先休息", level="lv3")
+for key, value in infoDICT.items():
+    print(key, ' : ', value)
+print(str(infoDICT["time"][-1][-1]["time_span"]["year"][0]) + str(infoDICT["time"][-1][-1]["time_span"]["month"][0])+str(infoDICT["time"][-1][-1]["time_span"]["day"][0])+str(infoDICT["time"][-1][-1]["time_span"]["weekday"][0]))
+print(str(datetime.strptime(str(infoDICT["time"][-1][-1]["time_span"]["year"][0]) + str(infoDICT["time"][-1][-1]["time_span"]["month"][0])+str(infoDICT["time"][-1][-1]["time_span"]["day"][0])+str(infoDICT["time"][-1][-1]["time_span"]["weekday"][0]),'%Y%m%d%w')))
+#print(str(datetime.strptime(infoDICT["time"][-1][-1]["datetime"][0:11], '%Y-%m-%d')))
 
 
 

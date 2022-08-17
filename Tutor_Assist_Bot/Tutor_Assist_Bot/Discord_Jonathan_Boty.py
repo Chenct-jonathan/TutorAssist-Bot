@@ -8,7 +8,7 @@ import re
 from datetime import datetime
 from pprint import pprint
 
-#from Tutor_Assist_Bot import runLoki
+from Tutor_Assist_Bot import runLoki
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -38,7 +38,10 @@ class BotClient(discord.Client):
         print('Logged on as {} with id {}'.format(self.user, self.user.id))
         ################### Multi-Session Conversation :設定多輪對話資訊 ###################
         self.templateDICT = {"updatetime" : None,
-                            "latestQuest": ""
+                            "latestQuest": "",
+                            "msgSTR":"",
+                            "replySTR":""
+                            
                }
         self.mscDICT = { #userid:templateDICT
                }
@@ -76,18 +79,24 @@ class BotClient(discord.Client):
                         replySTR = "嗨嗨，我們好像見過面，但卓騰的隱私政策不允許我記得你的資料，抱歉！"
                     #有講過話，而且還沒超過5分鐘就又跟我 hello (就繼續上次的對話)
                     else:
-                        replySTR = self.mscDICT[message.author.id]["latestQuest"]
+                        replySTR = self.mscDICT[message.author.id]["latestQuest"] 
                 #沒有講過話(給他一個新的template)
                 else:
                     self.mscDICT[message.author.id] = self.resetMSCwith(message.author.id)
-                    replySTR = msgSTR.title()
+                    replySTR = "您好，我是Bot Assistant，我會在老師不在時幫忙處理課程異動事宜喔!"#msgSTR.title()
 
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
                 #從這裡開始接上 NLU 模型
-                resulDICT = getLokiResult(msgSTR)
+                self.mscDICT[message.author.id]["msgSTR"] = msgSTR
+                resultDICT = getLokiResult(msgSTR)
                 logging.debug("######\nLoki 處理結果如下：")
-                logging.debug(resulDICT)
+                logging.debug(resultDICT)
+                if len(resultDICT) > 0:
+                    replySTR = "{}{}{}對嗎?\n確切日期: {}".format(resultDICT['CancelTimeText'], resultDICT["Course/Student"], resultDICT['CancelKeyword'], resultDICT['CancelDate'])
+                    #replySTR = (resultDICT)
+                else:
+                    replySTR ="感謝您的告知，我已馬上轉達老師並請他盡速回覆您!"
         await message.reply(replySTR)
 
 
