@@ -35,6 +35,7 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
+    resultDICT["class_arrangement"] = {}
     if utterance == "[15].[你][方便]嗎":
         resultDICT["EarlyOrLate"] = ""
         resultDICT["AlterTimeSpan"] = ""
@@ -115,9 +116,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         pass
 
     if utterance == "[提早][半][小時]":
-        resultDICT["EarlyOrLate"] = args[0]
-        resultDICT["AlterTimeSpan"] = args[1]+args[2]
-        resultDICT["AlterTime"] = ""
+        #parsing bug
         pass
 
     if utterance == "[禮拜天][可以]幫[XX]上課嗎":

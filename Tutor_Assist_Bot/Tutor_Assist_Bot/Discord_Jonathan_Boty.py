@@ -39,8 +39,8 @@ class BotClient(discord.Client):
         ################### Multi-Session Conversation :設定多輪對話資訊 ###################
         self.templateDICT = {"updatetime" : None,
                             "latestQuest": "",
-                            "msgSTR":"",
-                            "replySTR":""
+                            "msgSTR":""#,
+                            #"replySTR":""
                             
                }
         self.mscDICT = { #userid:templateDICT
@@ -83,7 +83,7 @@ class BotClient(discord.Client):
                 #沒有講過話(給他一個新的template)
                 else:
                     self.mscDICT[message.author.id] = self.resetMSCwith(message.author.id)
-                    replySTR = "您好，我是Bot Assistant，我會在老師不在時幫忙處理課程異動事宜喔!"#msgSTR.title()
+                    replySTR = "您好，我是Bot Assistant，我會在老師不在時幫忙處理課程異動事宜喔!(現在尚無法處理課程時間異動問題)"#msgSTR.title()
 
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
@@ -92,11 +92,26 @@ class BotClient(discord.Client):
                 resultDICT = getLokiResult(msgSTR)
                 logging.debug("######\nLoki 處理結果如下：")
                 logging.debug(resultDICT)
-                if len(resultDICT) > 0:
-                    replySTR = "{}{}{}對嗎?\n確切日期: {}".format(resultDICT['CancelTimeText'], resultDICT["Course/Student"], resultDICT['CancelKeyword'], resultDICT['CancelDate'])
-                    #replySTR = (resultDICT)
+                if len(resultDICT["intentLIST"]) == 1: 
+                    if "day_off" in resultDICT["intentLIST"]:
+                        if resultDICT["day_off"]['CancelTimeText']== "unknown":
+                            replySTR= "不好意思，您什麼時間要請假呢?"
+                            
+                        elif resultDICT["day_off"]['CancelKeyword']== "unknown":
+                            replySTR= "不好意思，您想要請假對嗎?"
+                        else:
+                            replySTR = "您好，跟您確認一下時間喔!\n{}{}對嗎?\n確切日期: {}".format(resultDICT["day_off"]['CancelTimeText'], resultDICT["day_off"]['CancelKeyword'], resultDICT["day_off"]['CancelDate'])
+                    elif "warm_blessing" in resultDICT["intentLIST"]:
+                        if resultDICT["warm_blessing"]["Holiday"] == "unknown":
+                            replySTR = "謝謝您的祝福! 祝您事事順心!"
+                        else: 
+                            replySTR = "謝謝您的祝福!也祝您{}快樂喔!".format(resultDICT["warm_blessing"]["Holiday"])
+                    elif "physical_course" in resultDICT["intentLIST"]:
+                        replySTR = "好的，下次課程恢復實體喔!"
+                    elif "online_course" in resultDICT["intentLIST"]:
+                        replySTR = "好的，下次課程改為線上喔!"
                 else:
-                    replySTR ="感謝您的告知，我已馬上轉達老師並請他盡速回覆您!"
+                    replySTR ="感謝您的告知，我已轉告老師，為保險起見，會請老師看過後盡速跟您確認喔!"
         await message.reply(replySTR)
 
 

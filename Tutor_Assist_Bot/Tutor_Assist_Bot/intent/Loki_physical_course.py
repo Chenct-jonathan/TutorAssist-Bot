@@ -30,64 +30,80 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
+    resultDICT["physical_course"] = {}
     if utterance == "[先][面對面]上課":
-        # write your code here
+        if args[1] not in ["線上","視訊","遠距"] and "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]到[府]上課":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]到班上課":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]實體":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]恢復[面對面]":
-        # write your code here
+        if args[1] not in ["線上","視訊","遠距"]and "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]恢復到[府]":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]恢復實體":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]恢復實體課程":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]恢復進班":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]改回[面對面]":
-        # write your code here
+        if args[1] not in ["線上","視訊","遠距"]and "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]改回到[府]":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]改回實體":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]改回實體課程":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]改回進班":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     if utterance == "[先]進班上課":
-        # write your code here
+        if "線上" not in inputSTR and "視訊" not in inputSTR and "遠距" not in inputSTR:
+            resultDICT["intentLIST"].append("physical_course")
         pass
 
     return resultDICT

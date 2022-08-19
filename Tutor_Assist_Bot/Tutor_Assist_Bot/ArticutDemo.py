@@ -33,6 +33,25 @@ print(str(datetime.strptime(str(infoDICT["time"][-1][-1]["time_span"]["year"][0]
 
 
 
+infoDICT = articut.parse("今天英文課暫停一次", level = "lv3")
+for key, value in infoDICT.items():
+    print(key, ' : ', value)
+    
+demoSTR = infoDICT["time"][-1][-1]["text"]
+print(demoSTR)
+
+infoDICT = articut.parse(demoSTR, level = "lv3")
+for key, value in infoDICT.items():
+    print(key, ' : ', value)
+print("日期:"+str(datetime.strptime(infoDICT["time"][-1][-1]["datetime"],'%Y-%m-%d %H:%M:%S' )))
+
+date_time_str = '18/09/19 01:55:19'
+
+date_time_obj = datetime.strptime(date_time_str, '%d/%m/%y %H:%M:%S')
+dateSTR = datetime.strftime(date_time_obj, '%d/%m/%y')
+print(str(date_time_obj.date()))
+
+
 
 
 
@@ -87,3 +106,5 @@ print(str(datetime.strptime(str(infoDICT["time"][-1][-1]["time_span"]["year"][0]
 #print(date_time_obj)
 #print(infoDICT["event"][0][1])
 
+demoDICT = {'intentLIST': ['warm_blessing',"day_off"], 'class_arrangement': {}, 'warm_blessing': {'Holiday': '中秋節'}}
+print(len(demoDICT['intentLIST']))

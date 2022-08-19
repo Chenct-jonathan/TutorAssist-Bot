@@ -179,6 +179,7 @@ class LokiResult():
 def runLoki(inputLIST, filterLIST=[]):
     # 將 intent 會使用到的 key 預先設爲空列表
     resultDICT = {
+        "intentLIST":[],
        #"key": []
     }
     lokiRst = LokiResult(inputLIST, filterLIST)
@@ -313,7 +314,7 @@ if __name__ == "__main__":
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
-    resultDICT=runLoki(["老師明天請假人數太多我們先停課，你明天先不用來喔"])
+    resultDICT=runLoki(["牽縈的同學確診了，安全起見，我們都先用視訊上課好嗎!"])
     #for key, value in resultDICT.items():
         #print(key, ' : ', value)
         

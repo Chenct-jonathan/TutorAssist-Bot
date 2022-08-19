@@ -30,44 +30,50 @@ def debugInfo(inputSTR, utterance):
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
+    resultDICT["online_course"] = {}
     if utterance == "[先]恢復[線上]":
-        # write your code here
+        if args[1] in ["線上","視訊","遠距"]:
+            resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]恢復視訊":
-        # write your code here
+        resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]改成[線上]":
-        # write your code here
+        if args[1] in ["線上","視訊","遠距"]:
+            resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]改成視訊":
-        # write your code here
+        resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]用[線上]":
-        # write your code here
+        if args[1] in ["線上","視訊","遠距"]:
+            resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]用視訊":
-        # write your code here
+        resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]維持[線上]":
-        # write your code here
+        if args[1] in ["線上","視訊","遠距"]:
+            resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]維持視訊":
-        # write your code here
+        resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]調整為[線上]":
-        # write your code here
+        if args[1] in ["線上","視訊","遠距"]:
+            resultDICT["intentLIST"].append("online_course")
         pass
 
     if utterance == "[先]調整為視訊":
-        # write your code here
+        resultDICT["intentLIST"].append("online_course")
         pass
 
     return resultDICT
