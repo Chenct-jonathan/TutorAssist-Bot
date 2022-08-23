@@ -7,8 +7,9 @@ import json
 import re
 from datetime import datetime
 from pprint import pprint
+from discord.ext import commands
 
-#from Tutor_Assist_Bot import runLoki
+from Tutor_Assist_Bot import runLoki
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -38,16 +39,30 @@ class BotClient(discord.Client):
         print('Logged on as {} with id {}'.format(self.user, self.user.id))
         ################### Multi-Session Conversation :設定多輪對話資訊 ###################
         self.templateDICT = {"updatetime" : None,
-                            "latestQuest": ""
+                            "latestQuest": "",
+                            "msgSTR":"",
+                            "requiredInfo":""
+                            
                }
         self.mscDICT = { #userid:templateDICT
                }
                # ####################################################################################
-        
+        #text_channel_list = []
+        #for server in Client.servers:
+            #for channel in server.channels:
+                #if channel.type == 'Text':
+                    #text_channel_list.append(channel)
+        #replySTR = "Bot Assistant上線囉!請@我讓我開始為您服務!"
+        #for c in text_channel_list:
+            #await client.send_message(c, replySTR)
+        #bot = commands.Bot(command_prefix='')
+        #await ctx.send(replySTR)
+
 
     async def on_message(self, message):
         # Don't respond to bot itself. Or it would create a non-stop loop.
         # 如果訊息來自 bot 自己，就不要處理，直接回覆 None。不然會 Bot 會自問自答個不停。
+        #message.reply("Bot Assistant上線囉!請@我讓我開始為您服務!")
         if message.author == self.user:
             return None
         elif message.content.lower().replace(" ", "") in ("bot點名"):
@@ -66,7 +81,7 @@ class BotClient(discord.Client):
                 replySTR = "pong pong"
 
 # ##########初次對話：這裡是 keyword trigger 的。
-            elif msgSTR.lower() in ["哈囉","嗨","你好","您好","hi","hello"]:
+            elif msgSTR.lower() in ["哈囉","嗨","你好","您好","hi","hello","早安","午安","晚安",""]:
                 #有講過話(判斷對話時間差)
                 if message.author.id in self.mscDICT.keys():
                     timeDIFF = datetime.now() - self.mscDICT[message.author.id]["updatetime"]
@@ -76,18 +91,39 @@ class BotClient(discord.Client):
                         replySTR = "嗨嗨，我們好像見過面，但卓騰的隱私政策不允許我記得你的資料，抱歉！"
                     #有講過話，而且還沒超過5分鐘就又跟我 hello (就繼續上次的對話)
                     else:
-                        replySTR = self.mscDICT[message.author.id]["latestQuest"]
+                        replySTR = self.mscDICT[message.author.id]["latestQuest"] 
                 #沒有講過話(給他一個新的template)
                 else:
                     self.mscDICT[message.author.id] = self.resetMSCwith(message.author.id)
-                    replySTR = msgSTR.title()
+                    replySTR = "您好，我是Bot Assistant，我會在老師不在時幫忙處理課程異動事宜!(現在尚無法處理課程時間異動問題)"#msgSTR.title()
 
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
                 #從這裡開始接上 NLU 模型
-                resulDICT = getLokiResult(msgSTR)
+                self.mscDICT[message.author.id]["msgSTR"] = msgSTR
+                resultDICT = getLokiResult(msgSTR)
                 logging.debug("######\nLoki 處理結果如下：")
-                logging.debug(resulDICT)
+                logging.debug(resultDICT)
+                if len(resultDICT["intentLIST"]) == 1: 
+                    if "day_off" in resultDICT["intentLIST"]:
+                        if resultDICT["day_off"]['CancelTimeText']== "unknown":
+                            replySTR= "不好意思，您什麼時間要請假呢?"
+                            
+                        elif resultDICT["day_off"]['CancelKeyword']== "unknown":
+                            replySTR= "不好意思，您想要請假對嗎?"
+                        else:
+                            replySTR = "您好，跟您確認一下時間喔!\n{}{}對嗎?\n確切日期: {}".format(resultDICT["day_off"]['CancelTimeText'], resultDICT["day_off"]['CancelKeyword'], resultDICT["day_off"]['CancelDate'])
+                    elif "warm_blessing" in resultDICT["intentLIST"]:
+                        if resultDICT["warm_blessing"]["Holiday"] == "unknown":
+                            replySTR = "謝謝您的祝福! 祝您事事順心!"
+                        else: 
+                            replySTR = "謝謝您的祝福!也祝您{}快樂喔!".format(resultDICT["warm_blessing"]["Holiday"])
+                    elif "physical_course" in resultDICT["intentLIST"]:
+                        replySTR = "好的，下次課程恢復實體喔!"
+                    elif "online_course" in resultDICT["intentLIST"]:
+                        replySTR = "好的，下次課程改為線上喔!"
+                else:
+                    replySTR ="感謝您的告知，我已轉告老師，為保險起見，會請老師看過後盡速跟您確認喔!"
         await message.reply(replySTR)
 
 

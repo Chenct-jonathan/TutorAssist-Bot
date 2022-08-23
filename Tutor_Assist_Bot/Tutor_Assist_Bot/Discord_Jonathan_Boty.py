@@ -7,6 +7,7 @@ import json
 import re
 from datetime import datetime
 from pprint import pprint
+from discord.ext import commands
 
 from Tutor_Assist_Bot import runLoki
 
@@ -39,18 +40,29 @@ class BotClient(discord.Client):
         ################### Multi-Session Conversation :設定多輪對話資訊 ###################
         self.templateDICT = {"updatetime" : None,
                             "latestQuest": "",
-                            "msgSTR":""#,
-                            #"replySTR":""
+                            "msgSTR":"",
+                            "requiredInfo":""
                             
                }
         self.mscDICT = { #userid:templateDICT
                }
                # ####################################################################################
-        
+        #text_channel_list = []
+        #for server in Client.servers:
+            #for channel in server.channels:
+                #if channel.type == 'Text':
+                    #text_channel_list.append(channel)
+        #replySTR = "Bot Assistant上線囉!請@我讓我開始為您服務!"
+        #for c in text_channel_list:
+            #await client.send_message(c, replySTR)
+        #bot = commands.Bot(command_prefix='')
+        #await ctx.send(replySTR)
+
 
     async def on_message(self, message):
         # Don't respond to bot itself. Or it would create a non-stop loop.
         # 如果訊息來自 bot 自己，就不要處理，直接回覆 None。不然會 Bot 會自問自答個不停。
+        #message.reply("Bot Assistant上線囉!請@我讓我開始為您服務!")
         if message.author == self.user:
             return None
         elif message.content.lower().replace(" ", "") in ("bot點名"):
@@ -69,7 +81,7 @@ class BotClient(discord.Client):
                 replySTR = "pong pong"
 
 # ##########初次對話：這裡是 keyword trigger 的。
-            elif msgSTR.lower() in ["哈囉","嗨","你好","您好","hi","hello"]:
+            elif msgSTR.lower() in ["哈囉","嗨","你好","您好","hi","hello","早安","午安","晚安",""]:
                 #有講過話(判斷對話時間差)
                 if message.author.id in self.mscDICT.keys():
                     timeDIFF = datetime.now() - self.mscDICT[message.author.id]["updatetime"]
@@ -83,7 +95,7 @@ class BotClient(discord.Client):
                 #沒有講過話(給他一個新的template)
                 else:
                     self.mscDICT[message.author.id] = self.resetMSCwith(message.author.id)
-                    replySTR = "您好，我是Bot Assistant，我會在老師不在時幫忙處理課程異動事宜喔!(現在尚無法處理課程時間異動問題)"#msgSTR.title()
+                    replySTR = "您好，我是Bot Assistant，我會在老師不在時幫忙處理課程異動事宜!(現在尚無法處理課程時間異動問題)"#msgSTR.title()
 
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話

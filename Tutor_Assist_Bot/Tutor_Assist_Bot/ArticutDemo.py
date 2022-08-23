@@ -108,3 +108,13 @@ print(str(date_time_obj.date()))
 
 demoDICT = {'intentLIST': ['warm_blessing',"day_off"], 'class_arrangement': {}, 'warm_blessing': {'Holiday': '中秋節'}}
 print(len(demoDICT['intentLIST']))
+
+demoSTR= "畯田您好"
+
+for i in ["([^<]*?你好)","([^<]*?您好)","([^<]*?早安)","([^<]*?午安)","([^<]*?晚安)"]:
+    try:
+        print(re.search(i,demoSTR).group())
+    except:
+        print("not found")
+        
+print(articut.parse("3:00-5:00你可以嗎",level = "lv2")['result_pos'])
