@@ -360,6 +360,6 @@ if __name__ == "__main__":
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
-    resultDICT = runLoki(["老師明天家中有事，英文課改8.-10.您方便嗎?"])
+    resultDICT = runLoki(["10ok嗎"])
 
     print(resultDICT)

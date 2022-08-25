@@ -31,31 +31,38 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "yes":
-        # write your code here
+        if "disagree" in resultDICT["intentLIST"]: pass
+        else: resultDICT["intentLIST"].append("agree")
         pass
 
     if utterance == "好":
-        # write your code here
+        if "disagree" in resultDICT["intentLIST"]: pass
+        else: resultDICT["intentLIST"].append("agree")
         pass
 
     if utterance == "好的":
-        # write your code here
+        if "disagree" in resultDICT["intentLIST"]: pass
+        else: resultDICT["intentLIST"].append("agree")
         pass
 
     if utterance == "對":
-        # write your code here
+        if "disagree" in resultDICT["intentLIST"]: pass
+        else: resultDICT["intentLIST"].append("agree")
         pass
 
     if utterance == "是":
-        # write your code here
+        if "disagree" in resultDICT["intentLIST"]: pass
+        else: resultDICT["intentLIST"].append("agree")
         pass
 
     if utterance == "沒問題":
-        # write your code here
+        if "disagree" in resultDICT["intentLIST"]: pass
+        else: resultDICT["intentLIST"].append("agree")
         pass
 
     if utterance == "沒錯":
-        # write your code here
+        if "disagree" in resultDICT["intentLIST"]: pass
+        else: resultDICT["intentLIST"].append("agree")
         pass
 
     return resultDICT

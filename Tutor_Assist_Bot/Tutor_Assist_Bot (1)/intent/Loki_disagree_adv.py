@@ -31,23 +31,38 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "no":
-        # write your code here
+        if "agree" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("agree")
+            resultDICT["intentLIST"].append("disagree")
+        else: resultDICT["intentLIST"].append("disagree")
         pass
 
     if utterance == "不對":
-        # write your code here
+        if "agree" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("agree")
+            resultDICT["intentLIST"].append("disagree")
+        else: resultDICT["intentLIST"].append("disagree")
         pass
 
     if utterance == "不是":
-        # write your code here
+        if "agree" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("agree")
+            resultDICT["intentLIST"].append("disagree")
+        else: resultDICT["intentLIST"].append("disagree")
         pass
 
     if utterance == "錯":
-        # write your code here
+        if "agree" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("agree")
+            resultDICT["intentLIST"].append("disagree")
+        else: resultDICT["intentLIST"].append("disagree")
         pass
 
     if utterance == "錯誤":
-        # write your code here
+        if "agree" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("agree")
+            resultDICT["intentLIST"].append("disagree")
+        else: resultDICT["intentLIST"].append("disagree")
         pass
 
     return resultDICT
