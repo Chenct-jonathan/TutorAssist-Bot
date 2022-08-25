@@ -174,14 +174,8 @@ class BotClient(discord.Client):
                         if "day_off" in self.mscDICT[self.user.id]["savedIntent"]:
                             if self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"] == "unknown":
                                 replySTR = "課程異動通知:\n{}{}\n已轉告老師，感謝您!".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"])
-                                user = client.get(781134410535796787)
-                                if user is not None:
-                                    await user.send(replySTR-"已轉告老師，感謝您!")
                             else:
                                 replySTR = "課程異動通知:\n{}{}{}\n已轉告老師，感謝您!".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"])
-                                user = client.get(781134410535796787)
-                                if user is not None:
-                                    await user.send(replySTR-"已轉告老師，感謝您!")
                         elif "class_arrangement" in self.mscDICT[self.user.id]["savedIntent"]:
                             if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"] == "unknown":
                                 if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"] == "unknown":
