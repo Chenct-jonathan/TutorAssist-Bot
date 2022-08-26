@@ -118,3 +118,9 @@ for i in ["([^<]*?你好)","([^<]*?您好)","([^<]*?早安)","([^<]*?午安)","(
         print("not found")
         
 print(articut.parse("3:00-5:00你可以嗎",level = "lv2")['result_pos'])
+
+print(articut.parse("聖誕節")['result_pos'])
+
+print(articut.parse("明天英文課810ok嗎?")['result_pos'])
+
+print(re.search("<ENTITY_num>([^<]*?)</ENTITY_num>(<ACTION_verb>到</ACTION_verb>)?(<AUX>到</AUX>)?(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([\d]*)[Oo][Kk]</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><CLAUSE_YesNoQ>[^<]*?</CLAUSE_YesNoQ>", "".join(articut.parse("明天英文課8-10ok嗎?")['result_pos'])).group(1))
