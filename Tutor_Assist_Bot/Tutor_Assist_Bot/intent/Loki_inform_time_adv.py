@@ -111,12 +111,12 @@ def getResult(inputSTR, utterance, args, resultDICT):
         pass
 
     if utterance == "八月十六日":
-        if len(inputSTR) <=6:
+        if len(inputSTR) >=7:
+            pass
+        else:
             resultDICT["intentLIST"].append("inform_time")
             resultDICT["inform_time_date"] = str(datetime.strptime(articut.parse(inputSTR, level = "lv3")["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S').date())
             resultDICT["inform_time_time"] = str(articut.parse(inputSTR, level = "lv3")["time"][0][0]["text"])
-        else:
-            pass
 
     if utterance == "八月十六日的5-7":
         
