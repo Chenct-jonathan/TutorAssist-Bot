@@ -15,7 +15,13 @@
 """
 
 import json
+from ArticutAPI import Articut
 import os
+import re
+from datetime import datetime
+
+accountDICT = json.load(open("account.info",encoding="utf-8"))
+articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
 
 DEBUG_inform_time_adv = True
 try:
@@ -28,10 +34,36 @@ def debugInfo(inputSTR, utterance):
     if DEBUG_inform_time_adv:
         print("[inform_time_adv] {} ===> {}".format(inputSTR, utterance))
 
+
+def getAdvArgs(utterance, inputSTR, groupIndexLIST):
+    url = "https://api.droidtown.co/Loki/API/"
+    username    = accountDICT["username"]
+    articut_key = accountDICT["articut_key"]
+    loki_key    = accountDICT["loki-key"]
+    payload = {                                                        # 這段範例程式在：https://api.droidtown.co/document/?python#Loki_7
+        "username" : username,
+        "loki_key" : loki_key,
+        "input_str": utterance
+    }
+    response = post(url, json=payload).json()
+    if response["status"] == True:
+        articut = Articut(username, articut_key)                      # 由於我已在 Loki 網頁裡把我要的 args 位置用圓括號括起來 (見附圖一)，所以它會被列入 patGroups 之一
+        articutResultDICT = articut.parse(inputSTR)
+        pat = re.compile(response["results"][0]["pattern"])
+        #print(pat)
+        #print(articutResultDICT["result_pos"][0])
+        patGroups = re.search(pat, articutResultDICT["result_pos"][0])
+        args = []
+        for i in groupIndexLIST:                                      
+            args.append(patGroups.group(i))
+        return (response["status"], args)
+    else:
+        return (response["status"], response["msg"])
+
+
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "8-10":
-        # write your code here
         pass
 
     if utterance == "8/16 8.":
@@ -79,11 +111,15 @@ def getResult(inputSTR, utterance, args, resultDICT):
         pass
 
     if utterance == "八月十六日":
-        # write your code here
-        pass
+        if len(inputSTR) <=6:
+            resultDICT["intentLIST"].append("inform_time")
+            resultDICT["inform_time_date"] = str(datetime.strptime(articut.parse(inputSTR, level = "lv3")["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S').date())
+            resultDICT["inform_time_time"] = str(articut.parse(inputSTR, level = "lv3")["time"][0][0]["text"])
+        else:
+            pass
 
     if utterance == "八月十六日的5-7":
-        # write your code here
+        
         pass
 
     if utterance == "八月十六日的5:00到7:00":

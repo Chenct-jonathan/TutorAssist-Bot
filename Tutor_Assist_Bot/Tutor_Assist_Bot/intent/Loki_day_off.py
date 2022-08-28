@@ -281,7 +281,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "[今天][先]請假":
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
-        resultDICT["day_off"]["CancelDate"] = str(datetime.strptime(articut.parse(args[0], level = "lv3")["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S').date())
+        try:
+            resultDICT["day_off"]["CancelDate"] = str(datetime.strptime(articut.parse(args[0], level = "lv3")["time"][0][0]["datetime"], '%Y-%m-%d %H:%M:%S').date())
+        except:
+            resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
         pass

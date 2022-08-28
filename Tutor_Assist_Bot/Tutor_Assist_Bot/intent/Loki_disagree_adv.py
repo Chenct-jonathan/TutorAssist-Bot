@@ -34,7 +34,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
         if "agree" in resultDICT["intentLIST"]:
             resultDICT["intentLIST"].remove("agree")
             resultDICT["intentLIST"].append("disagree")
-        else: resultDICT["intentLIST"].append("disagree")
+        elif len(inputSTR) >= 6:
+            pass
+        else: 
+            resultDICT["intentLIST"].append("disagree")
         pass
 
     if utterance == "不對":
@@ -53,15 +56,13 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
     if utterance == "錯":
         if "agree" in resultDICT["intentLIST"]:
-            resultDICT["intentLIST"].remove("agree")
-            resultDICT["intentLIST"].append("disagree")
+            pass
         else: resultDICT["intentLIST"].append("disagree")
         pass
 
     if utterance == "錯誤":
         if "agree" in resultDICT["intentLIST"]:
-            resultDICT["intentLIST"].remove("agree")
-            resultDICT["intentLIST"].append("disagree")
+            pass
         else: resultDICT["intentLIST"].append("disagree")
         pass
 

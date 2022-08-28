@@ -31,38 +31,66 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "yes":
-        if "disagree" in resultDICT["intentLIST"]: pass
-        else: resultDICT["intentLIST"].append("agree")
-        pass
+        if len(inputSTR) <= 5:
+            pass
+        elif "disagree" in resultDICT["intentLIST"]: 
+            pass
+        else: 
+            resultDICT["intentLIST"].append("agree")
+
 
     if utterance == "好":
-        if "disagree" in resultDICT["intentLIST"]: pass
-        else: resultDICT["intentLIST"].append("agree")
-        pass
+        if len(inputSTR) <= 5:
+            pass
+        elif "disagree" in resultDICT["intentLIST"]: 
+            pass
+        else: 
+            resultDICT["intentLIST"].append("agree")
+
 
     if utterance == "好的":
-        if "disagree" in resultDICT["intentLIST"]: pass
-        else: resultDICT["intentLIST"].append("agree")
-        pass
+        if len(inputSTR) <= 5:
+            pass
+        elif "disagree" in resultDICT["intentLIST"]: 
+            pass
+        else: 
+            resultDICT["intentLIST"].append("agree")
+
 
     if utterance == "對":
-        if "disagree" in resultDICT["intentLIST"]: pass
-        else: resultDICT["intentLIST"].append("agree")
-        pass
+        if len(inputSTR) <= 5:
+            pass
+        elif "disagree" in resultDICT["intentLIST"]: 
+            pass
+        else: 
+            resultDICT["intentLIST"].append("agree")
+
 
     if utterance == "是":
-        if "disagree" in resultDICT["intentLIST"]: pass
-        else: resultDICT["intentLIST"].append("agree")
-        pass
+        if len(inputSTR) <= 5:
+            pass
+        elif "disagree" in resultDICT["intentLIST"]: 
+            pass
+        else: 
+            resultDICT["intentLIST"].append("agree")
+
 
     if utterance == "沒問題":
-        if "disagree" in resultDICT["intentLIST"]: pass
-        else: resultDICT["intentLIST"].append("agree")
-        pass
+        if len(inputSTR) <= 5:
+            pass
+        elif "disagree" in resultDICT["intentLIST"]: 
+            pass
+        else: 
+            resultDICT["intentLIST"].append("agree")
+
 
     if utterance == "沒錯":
-        if "disagree" in resultDICT["intentLIST"]: pass
-        else: resultDICT["intentLIST"].append("agree")
-        pass
+        if len(inputSTR) <= 5:
+            pass
+        elif "disagree" in resultDICT["intentLIST"]: 
+            pass
+        else: 
+            resultDICT["intentLIST"].append("agree")
+
 
     return resultDICT

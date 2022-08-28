@@ -21,6 +21,7 @@ import re
 from requests import post
 
 accountDICT = json.load(open("account.info",encoding="utf-8"))
+articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
 
 DEBUG_class_arrangement_adv = True
 try:
@@ -47,10 +48,11 @@ def getAdvArgs(utterance, inputSTR, groupIndexLIST):
     response = post(url, json=payload).json()
     if response["status"] == True:
         articut = Articut(username, articut_key)                      # 由於我已在 Loki 網頁裡把我要的 args 位置用圓括號括起來 (見附圖一)，所以它會被列入 patGroups 之一
+        #inputSTR = inputSTR.replace("-","")
         articutResultDICT = articut.parse(inputSTR)
         pat = re.compile(response["results"][0]["pattern"])
-        #print(pat)
-        #print(articutResultDICT["result_pos"][0])
+        print(pat)
+        print(articutResultDICT["result_pos"][0])
         patGroups = re.search(pat, articutResultDICT["result_pos"][0])
         args = []
         for i in groupIndexLIST:                                      
@@ -79,21 +81,14 @@ def getResult(inputSTR, utterance, args, resultDICT):
         else:
             resultDICT["class_arrangement"] = {}
             resultDICT["intentLIST"].append("class_arrangement")
-            resultBOOL, args = getAdvArgs(utterance, inputSTR, [3])     # 利用 pythex 一類的網頁工具，我知道我要抓的 args 位置在第 10 個 group (見附圖二)。故 groupIndexLIST 裡放了 [10]
+            resultBOOL, args = getAdvArgs(utterance, inputSTR, [3])
             if resultBOOL == True:
                 resultDICT["class_arrangement"]["AlterTime"] = "".join(args)
             else:
                 resultDICT["error_msg"] = utterance
 
     if utterance == "3-5ok嗎":
-        if "class_arrangement" in resultDICT["intentLIST"]: pass
-        else:
-            resultDICT["class_arrangement"] = {}
-            resultBOOL, args = getAdvArgs(utterance, inputSTR, [7])     # 利用 pythex 一類的網頁工具，我知道我要抓的 args 位置在第 10 個 group (見附圖二)。故 groupIndexLIST 裡放了 [10]
-            if resultBOOL == True:
-                resultDICT["class_arrangement"]["AlterTime"].extend(args)
-            else:
-                resultDICT["error_msg"] = utterance
+        # write your code here
         pass
 
     if utterance == "3-5嗎":
