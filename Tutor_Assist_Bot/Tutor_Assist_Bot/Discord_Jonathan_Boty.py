@@ -53,16 +53,6 @@ class BotClient(discord.Client):
                } #userid:templateDICT
                }
                # ####################################################################################
-        #text_channel_list = []
-        #for server in Client.servers:
-            #for channel in server.channels:
-                #if channel.type == 'Text':
-                    #text_channel_list.append(channel)
-        #replySTR = "Bot Assistant上線囉!請@我讓我開始為您服務!"
-        #for c in text_channel_list:
-            #await client.send_message(c, replySTR)
-        #bot = commands.Bot(command_prefix='')
-        #await ctx.send(replySTR)
 
 
     async def on_message(self, message):
@@ -201,6 +191,12 @@ class BotClient(discord.Client):
                             replySTR = "課程異動通知:\n 課程改為線上授課\n已轉告老師，感謝您!"
                         elif "physical_course" in self.mscDICT[self.user.id]["savedIntent"]:
                             replySTR = "課程異動通知:\n 課程恢復實體授課\n已轉告老師，感謝您!"
+                        self.mscDICT[self.user.id] = {"updatetime" : None,
+                                                      "latestQuest": "",
+                                                      "savedIntent":"",
+                                                      "msgSTR":"",
+                                                      "requiredInfo":{}
+                                                      }                            
                     elif "disagree" in resultDICT["intentLIST"]:
                         replySTR = "抱歉，可以麻煩您再用中文輸入一次時間嗎?"
                     elif "inform_time" in resultDICT["intentLIST"]:

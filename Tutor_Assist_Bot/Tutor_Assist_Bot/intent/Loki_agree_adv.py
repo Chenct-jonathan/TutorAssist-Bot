@@ -31,7 +31,7 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "yes":
-        if len(inputSTR) <= 5:
+        if len(inputSTR) >= 5:
             pass
         elif "disagree" in resultDICT["intentLIST"]: 
             pass
@@ -40,7 +40,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
 
     if utterance == "好":
-        if len(inputSTR) <= 5:
+        if len(inputSTR) >= 5:
             pass
         elif "disagree" in resultDICT["intentLIST"]: 
             pass
@@ -49,7 +49,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
 
     if utterance == "好的":
-        if len(inputSTR) <= 5:
+        if len(inputSTR) >= 5:
             pass
         elif "disagree" in resultDICT["intentLIST"]: 
             pass
@@ -58,7 +58,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
 
     if utterance == "對":
-        if len(inputSTR) <= 5:
+        if len(inputSTR) >= 5:
             pass
         elif "disagree" in resultDICT["intentLIST"]: 
             pass
@@ -67,7 +67,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
 
     if utterance == "是":
-        if len(inputSTR) <= 5:
+        if len(inputSTR) >= 5:
             pass
         elif "disagree" in resultDICT["intentLIST"]: 
             pass
@@ -76,7 +76,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
 
     if utterance == "沒問題":
-        if len(inputSTR) <= 5:
+        if len(inputSTR) >= 5:
             pass
         elif "disagree" in resultDICT["intentLIST"]: 
             pass
@@ -85,7 +85,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
 
     if utterance == "沒錯":
-        if len(inputSTR) <= 5:
+        if len(inputSTR) >= 5:
             pass
         elif "disagree" in resultDICT["intentLIST"]: 
             pass
