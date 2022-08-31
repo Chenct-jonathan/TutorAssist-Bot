@@ -21,7 +21,7 @@ DEBUG_disagree_adv = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
-    userDefinedDICT = {"愉快":["愉快"],"線上":["線上"],"連假":["連假"],"進班":["進班"],"遠距":["遠距"],"小時半":["小時半"],"面對面":["面對面"]}
+    userDefinedDICT = {"_asNoun":["連假","線上","進班","遠距","面對面","愉快","線下","到班","實體課程"],"_asOkay":["ok","OK","oK","Ok","Okay","okay","OKAY"],"_asTime":["小時半"],"_asVerb":["改一下","討論一下","調整一下"]}
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
@@ -31,39 +31,63 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "no":
-        if "agree" in resultDICT["intentLIST"]:
-            resultDICT["intentLIST"].remove("agree")
-            resultDICT["intentLIST"].append("disagree")
-        elif len(inputSTR) >= 6:
-            pass
+        if len(inputSTR) <= 3:
+            if "agree" in resultDICT["intentLIST"]:
+                resultDICT["intentLIST"].remove("agree")
+                resultDICT["intentLIST"].append("disagree")
+            else:
+                resultDICT["intentLIST"].append("disagree")
         else: 
-            resultDICT["intentLIST"].append("disagree")
-        pass
+            pass
 
     if utterance == "不對":
-        if "agree" in resultDICT["intentLIST"]:
-            resultDICT["intentLIST"].remove("agree")
-            resultDICT["intentLIST"].append("disagree")
-        else: resultDICT["intentLIST"].append("disagree")
-        pass
+        if len(inputSTR) <= 3:
+            if "agree" in resultDICT["intentLIST"]:
+                resultDICT["intentLIST"].remove("agree")
+                resultDICT["intentLIST"].append("disagree")
+            else:
+                resultDICT["intentLIST"].append("disagree")
+        else: 
+            pass
 
     if utterance == "不是":
-        if "agree" in resultDICT["intentLIST"]:
-            resultDICT["intentLIST"].remove("agree")
-            resultDICT["intentLIST"].append("disagree")
-        else: resultDICT["intentLIST"].append("disagree")
-        pass
+        if len(inputSTR) <= 3:
+            if "agree" in resultDICT["intentLIST"]:
+                resultDICT["intentLIST"].remove("agree")
+                resultDICT["intentLIST"].append("disagree")
+            else:
+                resultDICT["intentLIST"].append("disagree")
+        else: 
+            pass
+
+    if utterance == "不正確":
+        if len(inputSTR) <= 4:
+            if "agree" in resultDICT["intentLIST"]:
+                resultDICT["intentLIST"].remove("agree")
+                resultDICT["intentLIST"].append("disagree")
+            else:
+                resultDICT["intentLIST"].append("disagree")
+        else: 
+            pass
 
     if utterance == "錯":
-        if "agree" in resultDICT["intentLIST"]:
+        if len(inputSTR) <= 3:
+            if "agree" in resultDICT["intentLIST"]:
+                resultDICT["intentLIST"].remove("agree")
+                resultDICT["intentLIST"].append("disagree")
+            else:
+                resultDICT["intentLIST"].append("disagree")
+        else: 
             pass
-        else: resultDICT["intentLIST"].append("disagree")
-        pass
 
     if utterance == "錯誤":
-        if "agree" in resultDICT["intentLIST"]:
+        if len(inputSTR) <= 3:
+            if "agree" in resultDICT["intentLIST"]:
+                resultDICT["intentLIST"].remove("agree")
+                resultDICT["intentLIST"].append("disagree")
+            else:
+                resultDICT["intentLIST"].append("disagree")
+        else: 
             pass
-        else: resultDICT["intentLIST"].append("disagree")
-        pass
 
     return resultDICT
