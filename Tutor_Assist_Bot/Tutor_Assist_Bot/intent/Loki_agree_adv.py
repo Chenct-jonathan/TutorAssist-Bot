@@ -35,69 +35,59 @@ def getResult(inputSTR, utterance, args, resultDICT):
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "okay":
         if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "yes":
         if len(inputSTR) >= 5 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "好":
         if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "好的":
         if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "對":
         if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "是":
         if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "正確":
         if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "沒問題":
-        if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
+        if len(inputSTR) >= 5 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     if utterance == "沒錯":
         if len(inputSTR) >= 4 or resultDICT["intentLIST"] != []:
             pass
         else:
             resultDICT["intentLIST"].append("agree")
-        pass
 
     return resultDICT

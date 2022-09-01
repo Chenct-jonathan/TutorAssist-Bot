@@ -23,6 +23,7 @@ from datetime import datetime
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["articut_key"])
 
+
 DEBUG_day_off = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
@@ -38,6 +39,8 @@ def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     resultDICT["day_off"] = {}
     if utterance == "[XX][先]休息":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -48,9 +51,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "休息"
-        pass
 
     if utterance == "[XX][先]停課":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -61,9 +65,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "停課"
-        pass
 
     if utterance == "[XX][先]暫停":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -74,9 +79,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "暫停"
-        pass
 
     if utterance == "[XX][先]病假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -87,9 +93,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[XX][先]請[病假]":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -100,9 +107,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請{}".format(args[2])
-        pass
 
     if utterance == "[XX][先]請假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -113,9 +121,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[XX][可能]要[先]休息":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -126,9 +135,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "休息"
-        pass
 
     if utterance == "[XX][可能]要[先]休息了":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -139,9 +149,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "休息"
-        pass
 
     if utterance == "[XX][可能]要[先]停課":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -152,9 +163,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "停課"
-        pass
 
     if utterance == "[XX][可能]要[先]停課了":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -165,9 +177,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "停課"
-        pass
 
     if utterance == "[XX][可能]要[先]暫停":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -178,9 +191,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "暫停"
-        pass
 
     if utterance == "[XX][可能]要[先]暫停了":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -191,9 +205,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "暫停"
-        pass
 
     if utterance == "[XX][可能]要[先]病假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -204,9 +219,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[XX][可能]要[先]請[病假]":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -217,9 +233,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請{}".format(args[3])
-        pass
 
     if utterance == "[XX][可能]要[先]請假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -230,9 +247,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[XX][可能]要[先]請假了":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -243,9 +261,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[今天][先]休息":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -254,9 +273,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "休息"
-        pass
 
     if utterance == "[今天][先]停課":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -265,9 +285,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "停課"
-        pass
 
     if utterance == "[今天][先]暫停":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -276,9 +297,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "暫停"
-        pass
 
     if utterance == "[今天][先]病假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -287,9 +309,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[今天][先]請假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -298,9 +321,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[今天][先]請病假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -309,9 +333,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[今天][可能]要[先]休息":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -320,9 +345,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "休息"
-        pass
 
     if utterance == "[今天][可能]要[先]停課":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -331,9 +357,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "停課"
-        pass
 
     if utterance == "[今天][可能]要[先]暫停":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -342,9 +369,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "暫停"
-        pass
 
     if utterance == "[今天][可能]要[先]病假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -353,9 +381,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[今天][可能]要[先]請[病假]":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -364,9 +393,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請{}".format(args[3])
-        pass
 
     if utterance == "[今天][可能]要[先]請假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         resultDICT["day_off"]["CancelTimeText"] = args[0]
         try:
@@ -375,9 +405,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"]= "unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[先]不上課喔":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -388,9 +419,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[先]不用來":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -401,9 +433,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[先]不用幫[XX]上課":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -414,9 +447,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[1]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[先]不用幫[弟弟]上課":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -427,8 +461,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[1]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
+
     if utterance == "[先]不用過來喔":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -439,9 +475,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = "unknown"
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[弟弟][先]休息":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -452,9 +489,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "休息"
-        pass
 
     if utterance == "[弟弟][先]停課":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -465,10 +503,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "停課"
-        pass
-        pass
 
     if utterance == "[弟弟][先]暫停":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -479,10 +517,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "暫停"
-        pass
-        pass
 
     if utterance == "[弟弟][先]病假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -493,9 +531,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     if utterance == "[弟弟][先]請[病假]":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -506,9 +545,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請{}".format(args[2])
-        pass
 
     if utterance == "[弟弟][先]請假":
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")        
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
@@ -519,6 +559,5 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["day_off"]["CancelDate"] ="unknown"
         resultDICT["day_off"]["Course/Student"] = args[0]
         resultDICT["day_off"]["CancelKeyword"] = "請假"
-        pass
 
     return resultDICT

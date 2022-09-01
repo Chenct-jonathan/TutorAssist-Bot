@@ -38,23 +38,38 @@ def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     resultDICT["warm_blessing"] = {}
     if utterance == "[中秋節]快樂":
-        resultDICT["intentLIST"].append("warm_blessing")
-        infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        try:
-            resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]*?)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(1)
-        except:
-            resultDICT["warm_blessing"]["Holiday"] = "unknown"
-        pass
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]*?)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(1)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        else:
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]*?)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(1)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"            
 
     if utterance == "[中秋節]愉快":
-        resultDICT["intentLIST"].append("warm_blessing")
-        infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        try:
-            resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
-        except:
-            resultDICT["warm_blessing"]["Holiday"] = "unknown"
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]*?)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(1)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        else:
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]*?)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(1)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
 
     if utterance == "[假期]快樂":
         resultDICT["intentLIST"].append("warm_blessing")
@@ -63,7 +78,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
         except:
             resultDICT["warm_blessing"]["Holiday"] = "unknown"
-        pass
 
     if utterance == "[假期]愉快":
         resultDICT["intentLIST"].append("warm_blessing")
@@ -72,7 +86,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
         except:
             resultDICT["warm_blessing"]["Holiday"] = "unknown"
-        pass
 
     if utterance == "祝[你]":
         resultDICT["intentLIST"].append("warm_blessing")
@@ -81,7 +94,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
         except:
             resultDICT["warm_blessing"]["Holiday"] = "unknown"
-        pass
 
     if utterance == "祝[老師]":
         resultDICT["intentLIST"].append("warm_blessing")
@@ -90,6 +102,5 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
         except:
             resultDICT["warm_blessing"]["Holiday"] = "unknown"
-        pass
 
     return resultDICT

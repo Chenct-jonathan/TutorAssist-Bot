@@ -51,19 +51,19 @@ try:
     from intent import Loki_physical_course
     from intent import Loki_class_arrangement
     from intent import Loki_agree_adv
-    from intent import Loki_inform_time_adv
     from intent import Loki_warm_blessing
     from intent import Loki_disagree_adv
     from intent import Loki_online_course
+    from intent import Loki_infrom_time
     from intent import Loki_day_off
 except:
     from .intent import Loki_physical_course
     from .intent import Loki_class_arrangement
     from .intent import Loki_agree_adv
-    from .intent import Loki_inform_time_adv
     from .intent import Loki_warm_blessing
     from .intent import Loki_disagree_adv
     from .intent import Loki_online_course
+    from .intent import Loki_infrom_time
     from .intent import Loki_day_off
 
 
@@ -202,10 +202,6 @@ def runLoki(inputLIST, filterLIST=[]):
                 if lokiRst.getIntent(index, resultIndex) == "agree_adv":
                     resultDICT = Loki_agree_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
-                # inform_time_adv
-                if lokiRst.getIntent(index, resultIndex) == "inform_time_adv":
-                    resultDICT = Loki_inform_time_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
                 # warm_blessing
                 if lokiRst.getIntent(index, resultIndex) == "warm_blessing":
                     resultDICT = Loki_warm_blessing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
@@ -217,6 +213,10 @@ def runLoki(inputLIST, filterLIST=[]):
                 # online_course
                 if lokiRst.getIntent(index, resultIndex) == "online_course":
                     resultDICT = Loki_online_course.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # infrom_time
+                if lokiRst.getIntent(index, resultIndex) == "infrom_time":
+                    resultDICT = Loki_infrom_time.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
                 # day_off
                 if lokiRst.getIntent(index, resultIndex) == "day_off":
@@ -297,7 +297,7 @@ def testIntent():
 
     # class_arrangement
     print("[TEST] class_arrangement")
-    inputLIST = ['8.OK嗎','改時間','8.你OK嗎','XX先改8.','討論時間','調整時間','8.老師OK嗎','XX先換到8.','XX先換成8.','XX先換至8.','XX先改到8.','XX先改至8.','XX先調到8.','XX先調成8.','XX先調至8.','8.你可以嗎','8.你方便嗎','XX先改八點','八點你OK嗎','弟弟先改8.','改XX的時間','改一下時間','改上課時間','XX先延後到8.','XX先提早到8.','XX先調整到8.','XX先調整成8.','XX先調整至8.','8.老師可以嗎','8.老師方便嗎','XX先換到八點','XX先換成八點','XX先換至八點','XX先改到八點','XX先改至八點','XX先調到八點','XX先調成八點','XX先調至八點','八點老師OK嗎','弟弟先換到8.','弟弟先換成8.','弟弟先換至8.','弟弟先改到8.','弟弟先改至8.','弟弟先調到8.','弟弟先調成8.','弟弟先調至8.','討論XX的時間','調整XX的時間','八點你方便嗎','弟弟先改八點','改弟弟的時間','改週四的時間','討論一下時間','討論上課時間','調整一下時間','調整上課時間','XX可能要先改8.','XX先延後到八點','XX先延後半小時','XX先提早到八點','XX先提早半小時','XX先調整到八點','XX先調整成八點','XX先調整至八點','弟弟先延後到8.','弟弟先提早到8.','弟弟先調整到8.','弟弟先調整成8.','弟弟先調整至8.','改一下XX的時間','八點老師可以嗎','八點老師方便嗎','弟弟先換到八點','弟弟先換成八點','弟弟先換至八點','弟弟先改到八點','弟弟先調到八點','弟弟先調成八點','弟弟先調至八點','改一下上課時間','討論弟弟的時間','討論週四的時間','調整弟弟的時間','調整週四的時間','8.可以幫XX上課嗎','XX可能要先換到8.','XX可能要先換成8.','XX可能要先換至8.','XX可能要先改到8.','XX可能要先改至8.','XX可能要先調到8.','XX可能要先調成8.','XX可能要先調至8.','弟弟先改至八點 ','XX先延後一小時半','XX先提早一小時半','XX先提早半個小時','XX可能要先改八點','弟弟可能要先改8.','討論一下XX的時間','調整一下XX的時間','弟弟先延後到八點','弟弟先延後半小時','弟弟先提早到八點','弟弟先提早半小時','弟弟先調整到八點','弟弟先調整成八點','弟弟先調整至八點','改一下弟弟的時間','改一下週四的時間','討論一下上課時間','調整一下上課時間',' XX先延後半個小時 ','XX可能要先延後到8.','XX可能要先提早到8.','XX可能要先調整到8.','XX可能要先調整成8.','XX可能要先調整至8.','8.可以幫弟弟上課嗎','XX先延後一個小時半','XX可能要先換到八點','XX可能要先換成八點','XX可能要先換至八點','XX可能要先改到八點','XX可能要先改至八點','XX可能要先調到八點','XX可能要先調成八點','XX可能要先調至八點','弟弟可能要先換到8.','弟弟可能要先換成8.','弟弟可能要先換至8.','弟弟可能要先改到8.','弟弟可能要先改至8.','弟弟可能要先調到8.','弟弟可能要先調成8.','弟弟可能要先調至8.','弟弟先延後一小時半','弟弟先延後半個小時','弟弟先提早一小時半','弟弟先提早半個小時','弟弟可能要先改八點','討論一下弟弟的時間','討論一下週四的時間','調整一下弟弟的時間','調整一下週四的時間','XX可能要先延後到八點','XX可能要先延後半小時','XX可能要先提早到八點','XX可能要先提早半小時','XX可能要先調整到八點','XX可能要先調整成八點','XX可能要先調整至八點','弟弟可能要先延後到8.','弟弟可能要先提早到8.','弟弟可能要先調整到8.','弟弟可能要先調整成8.','弟弟可能要先調整至8.','禮拜天可以幫XX上課嗎','弟弟先延後一個小時半','弟弟可能要先換到八點','弟弟可能要先換成八點','弟弟可能要先換至八點','弟弟可能要先改到八點','弟弟可能要先調到八點','弟弟可能要先調成八點','弟弟可能要先調至八點','弟弟可能要先改至八點 ','XX可能要先延後一小時半','XX可能要先提早一小時半','XX可能要先提早半個小時','弟弟可能要先延後到八點','弟弟可能要先延後半小時','弟弟可能要先提早到八點','弟弟可能要先提早半小時','弟弟可能要先調整到八點','弟弟可能要先調整成八點','弟弟可能要先調整至八點','禮拜天可以幫弟弟上課嗎',' XX可能要先延後半個小時 ','XX可能要先延後一個小時半','弟弟可能要先延後一小時半','弟弟可能要先延後半個小時','弟弟可能要先提早一小時半','弟弟可能要先提早半個小時','弟弟可能要先延後一個小時半']
+    inputLIST = ['8.OK嗎','改時間','8.你OK嗎','XX先改8.','討論時間','調整時間','8.老師OK嗎','XX先換到8.','XX先換成8.','XX先換至8.','XX先改到8.','XX先改至8.','XX先調到8.','XX先調成8.','XX先調至8.','8.你可以嗎','8.你方便嗎','XX先改八點','八點你OK嗎','弟弟先改8.','改XX的時間','改一下時間','改上課時間','XX先延後到8.','XX先提早到8.','XX先調整到8.','XX先調整成8.','XX先調整至8.','8.老師可以嗎','8.老師方便嗎','XX先換到八點','XX先換成八點','XX先換至八點','XX先改到八點','XX先改至八點','XX先調到八點','XX先調成八點','XX先調至八點','八點老師OK嗎','弟弟先換到8.','弟弟先換成8.','弟弟先換至8.','弟弟先改到8.','弟弟先改至8.','弟弟先調到8.','弟弟先調成8.','弟弟先調至8.','討論XX的時間','調整XX的時間','八點你方便嗎','弟弟先改八點','改弟弟的時間','改週四的時間','討論一下時間','討論上課時間','調整一下時間','調整上課時間','XX可能要先改8.','XX先延後到八點','XX先延後半小時','XX先提早到八點','XX先提早半小時','XX先調整到八點','XX先調整成八點','XX先調整至八點','弟弟先延後到8.','弟弟先提早到8.','弟弟先調整到8.','弟弟先調整成8.','弟弟先調整至8.','改一下XX的時間','八點老師可以嗎','八點老師方便嗎','弟弟先換到八點','弟弟先換成八點','弟弟先換至八點','弟弟先改到八點','弟弟先改至八點','弟弟先調到八點','弟弟先調成八點','弟弟先調至八點','改一下上課時間','討論弟弟的時間','討論週四的時間','調整弟弟的時間','調整週四的時間','8.可以幫XX上課嗎','XX可能要先換到8.','XX可能要先換成8.','XX可能要先換至8.','XX可能要先改到8.','XX可能要先改至8.','XX可能要先調到8.','XX可能要先調成8.','XX可能要先調至8.','XX先延後一小時半','XX先延後半個小時','XX先提早一小時半','XX先提早半個小時','XX可能要先改八點','弟弟可能要先改8.','討論一下XX的時間','調整一下XX的時間','弟弟先延後到八點','弟弟先延後半小時','弟弟先提早到八點','弟弟先提早半小時','弟弟先調整到八點','弟弟先調整成八點','弟弟先調整至八點','改一下弟弟的時間','改一下週四的時間','討論一下上課時間','調整一下上課時間','XX可能要先延後到8.','XX可能要先提早到8.','XX可能要先調整到8.','XX可能要先調整成8.','XX可能要先調整至8.','8.可以幫弟弟上課嗎','XX先延後一個小時半','XX可能要先換到八點','XX可能要先換成八點','XX可能要先換至八點','XX可能要先改到八點','XX可能要先改至八點','XX可能要先調到八點','XX可能要先調成八點','XX可能要先調至八點','弟弟可能要先換到8.','弟弟可能要先換成8.','弟弟可能要先換至8.','弟弟可能要先改到8.','弟弟可能要先改至8.','弟弟可能要先調到8.','弟弟可能要先調成8.','弟弟可能要先調至8.','弟弟先延後一小時半','弟弟先延後半個小時','弟弟先提早一小時半','弟弟先提早半個小時','弟弟可能要先改八點','討論一下弟弟的時間','討論一下週四的時間','調整一下弟弟的時間','調整一下週四的時間','XX可能要先延後到八點','XX可能要先延後半小時','XX可能要先提早到八點','XX可能要先提早半小時','XX可能要先調整到八點','XX可能要先調整成八點','XX可能要先調整至八點','弟弟可能要先延後到8.','弟弟可能要先提早到8.','弟弟可能要先調整到8.','弟弟可能要先調整成8.','弟弟可能要先調整至8.','禮拜天可以幫XX上課嗎','弟弟先延後一個小時半','弟弟可能要先換到八點','弟弟可能要先換成八點','弟弟可能要先換至八點','弟弟可能要先改到八點','弟弟可能要先改至八點','弟弟可能要先調到八點','弟弟可能要先調成八點','弟弟可能要先調至八點','XX可能要先延後一小時半','XX可能要先延後半個小時','XX可能要先提早一小時半','XX可能要先提早半個小時','弟弟可能要先延後到八點','弟弟可能要先延後半小時','弟弟可能要先提早到八點','弟弟可能要先提早半小時','弟弟可能要先調整到八點','弟弟可能要先調整成八點','弟弟可能要先調整至八點','禮拜天可以幫弟弟上課嗎','XX可能要先延後一個小時半','弟弟可能要先延後一小時半','弟弟可能要先延後半個小時','弟弟可能要先提早一小時半','弟弟可能要先提早半個小時','弟弟可能要先延後一個小時半']
     testLoki(inputLIST, ['class_arrangement'])
     print("")
 
@@ -305,12 +305,6 @@ def testIntent():
     print("[TEST] agree_adv")
     inputLIST = ['ok','yes','好','對','是','okay','好的','正確','沒錯','沒問題']
     testLoki(inputLIST, ['agree_adv'])
-    print("")
-
-    # inform_time_adv
-    print("[TEST] inform_time_adv")
-    inputLIST = ['8-10','9/15','8/16的8.','8/16的8-10','8/16的8:00','8/16的八點','八月16的8.','八點-十點','八月16的8-10','八月16的8:00','八月十六日','8/16的8:00-10:00','八月16的8:00-10:00','八月十六日的5-7','八月十六的八點','8/16的八點到十點','八月十六日的八點','八月16的五點到七點','八月十六日的5:00到7:00','八月十六日的五點到七點']
-    testLoki(inputLIST, ['inform_time_adv'])
     print("")
 
     # warm_blessing
@@ -331,6 +325,12 @@ def testIntent():
     testLoki(inputLIST, ['online_course'])
     print("")
 
+    # infrom_time
+    print("[TEST] infrom_time")
+    inputLIST = ['8.','8.-10.','8.到10.','8.至10.','8:30-10.','8:30-10:30','8:30到10.','8:30至10.','8:30到10:30','8:30至10:30','八月三十','八點-十點','八月三十日','八點到十點','八點至十點','八月三十的10.-12.','八月三十的10.到12.','八月三十的10.至12.','八月三十的10:30-12.','八月三十日的10.-12.','八月三十的10:30-12:00','八月三十的10:30到12.','八月三十的10:30至12.','八月三十日的10.到12.','八月三十日的10.至12.','八月三十的10:30到12:00','八月三十的10:30至12:00']
+    testLoki(inputLIST, ['infrom_time'])
+    print("")
+
     # day_off
     print("[TEST] day_off")
     inputLIST = ['XX先休息','XX先停課','XX先暫停','XX先病假','XX先請假','先不用來','XX先請病假','今天先休息','今天先停課','今天先暫停','今天先病假','今天先請假','先不上課喔','弟弟先休息','弟弟先停課','弟弟先暫停','弟弟先病假','弟弟先請假','今天先請病假','先不用過來喔','弟弟先請病假','XX可能要先休息','XX可能要先停課','XX可能要先暫停','XX可能要先病假','XX可能要先請假','先不用幫XX上課','XX可能要先休息了','XX可能要先停課了','XX可能要先暫停了','XX可能要先請假了','XX可能要先請病假','今天可能要先休息','今天可能要先停課','今天可能要先暫停','今天可能要先病假','今天可能要先請假','先不用幫弟弟上課','今天可能要先請病假']
@@ -349,6 +349,5 @@ if __name__ == "__main__":
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
     
-    resultDICT = runLoki(["okay"])
-
-    print(resultDICT)    
+    resultDICT = runLoki(["九月三十日的十點-十二點"])
+    print(resultDICT)

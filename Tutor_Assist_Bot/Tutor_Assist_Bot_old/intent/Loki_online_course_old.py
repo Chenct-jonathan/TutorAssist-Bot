@@ -21,7 +21,7 @@ DEBUG_online_course = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
-    userDefinedDICT = {"愉快":["愉快"],"線上":["線上"],"連假":["連假"],"進班":["進班"],"遠距":["遠距"],"小時半":["小時半"],"面對面":["面對面"]}
+    userDefinedDICT = {"_asNoun":["連假","線上","進班","遠距","面對面","愉快","線下","到班","實體課程"],"_asOkay":["ok","OK","oK","Ok","Okay","okay","OKAY"],"_asTime":["小時半"],"_asVerb":["改一下","討論一下","調整一下"]}
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
@@ -33,82 +33,98 @@ def getResult(inputSTR, utterance, args, resultDICT):
     resultDICT["online_course"] = {}
     if utterance == "[先]恢復線上":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]恢復視訊":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]恢復遠距":
         resultDICT["intentLIST"].append("online_course")
-        pass
-
-    if utterance == "[先]改成線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
-
-    if utterance == "[先]改成視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]改線上":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]改視訊":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]改遠距":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]用線上":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]用視訊":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]用遠距":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]維持線上":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]維持視訊":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]維持遠距":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]線上":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]視訊":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]調整為線上":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]調整為視訊":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]調整為遠距":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
 
     if utterance == "[先]遠距":
         resultDICT["intentLIST"].append("online_course")
-        pass
+        
+
+    if utterance == "[先都]線上":
+        resultDICT["intentLIST"].append("online_course")
+        
+
+    if utterance == "[先都]視訊":
+        resultDICT["intentLIST"].append("online_course")
+        
+
+    if utterance == "[先都]遠距":
+        resultDICT["intentLIST"].append("online_course")
+        
+
+    if utterance == "要[先]線上":
+        resultDICT["intentLIST"].append("online_course")
+        
+
+    if utterance == "要[先]視訊":
+        resultDICT["intentLIST"].append("online_course")
+        
+
+    if utterance == "要[先]遠距":
+        resultDICT["intentLIST"].append("online_course")
+        
 
     return resultDICT
