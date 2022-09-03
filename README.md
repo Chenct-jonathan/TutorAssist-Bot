@@ -13,17 +13,19 @@ TutorAssist Bot 並不是家教老師的分身，為保障師生雙方的個人�
 * **恢復實體授課**
 * **回應善意祝福**
 
-
+---
 
 ### Directiry Overview
+
 ---
+
 > |
 > |
-> +---**Discord**
-> |   |   **Discord_Jonathan_Boty.py** ----------------- # Discord 主程式：處理 Bot 在 Discord 上的運作
-> |   |   **Tutor_Assist_Bot.py**---------------------------- # LOKI NLU 主程式：處理語言
+> +---Discord
+> |   |   Discord_Jonathan_Boty.py ----------------- # Discord 主程式：處理 Bot 在 Discord 上的運作
+> |   |   Tutor_Assist_Bot.py----------------------- # LOKI NLU 主程式：處理語言
 > |   |   
-> |   \---**intent**--------------------------------------------------# intent：utterance及語句意圖處理抽取                   
+> |   \---intent------------------------------------ # intent：utterance及語句意圖處理抽取                   
 > |       |   Loki_agree_adv.py
 > |       |   Loki_class_arrangement.py
 > |       |   Loki_day_off.py
@@ -36,7 +38,7 @@ TutorAssist Bot 並不是家教老師的分身，為保障師生雙方的個人�
 > |       |   USER_DEFINED.json
 > |       |   
 > |               
-> \---**ref**----------------------------------------------------------# ref：可供 LOKI 讀取的 ref
+> \---ref------------------------------------------- # ref：可供 LOKI 讀取的 ref
 >    agree_adv.ref
 >    class_arrangement.ref
 >    day_off.ref
@@ -46,6 +48,7 @@ TutorAssist Bot 並不是家教老師的分身，為保障師生雙方的個人�
 >    physical_course.ref
 >    warm_blessing.ref
 
+---
 
 ### 環境設定
 
