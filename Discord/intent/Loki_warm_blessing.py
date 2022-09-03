@@ -52,7 +52,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
             try:
                 resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]*?)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(1)
             except:
-                resultDICT["warm_blessing"]["Holiday"] = "unknown"            
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
 
     if utterance == "[中秋節]愉快":
         if "inform_time" in resultDICT["intentLIST"]:
