@@ -54,11 +54,23 @@
 ---
 
 * **Python 3+**
+
 * **ArticutAPI** ```pip3 install ArticutAPI```
+
 * **註冊成為 [Droidtown](https://api.droidtown.co/login/) 會員**
 
+* **建立 account.info**  
+
+  ```json
+  {
+      "username" : " 填入 Droidtown 帳號 ",
+      "articut_key" : " 填入 Articut 金鑰 ",
+      "loki-key":" 填入 Loki 專案金鑰 ",
+      "discord_token":" 填入 Discord Token "
+  }
 
 ---
+
 ### 啟用 Loki 服務
 
 ---
@@ -82,6 +94,14 @@
 4. 到 ```Bot Permissions``` 勾選 ```Sends Messages```及 ```Read Message History```
 5. 複製 ```Token``` 並填入 ```account.info``` 中 ```discord_token```欄位
 6. 將 Bot 加入 Discord 伺服器
+
+---
+
+### 獲取 Aritcut API 金鑰
+
+1. 登入 **[Droidtown](https://api.droidtown.co/login/)** 前往```服務資訊```
+2. 選擇```Articut```並```複製 API 金鑰```
+3. 將 ```API 金鑰```填入```account.info``` 中 ```articut_key```欄位
 
 ---
 
