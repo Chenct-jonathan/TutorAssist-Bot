@@ -1,0 +1,51 @@
+列出磁碟區 Acer 的資料夾 PATH
+磁碟區序號為 5644-003F
+C:.
+|   .gitignore
+|   output.txt
+|   README.md
+|   
++---Discord
+|   |   account.info
+|   |   ArticutDemo.py
+|   |   Discord_Jonathan_Boty.py
+|   |   Tutor_Assist_Bot.py
+|   |   
+|   +---intent
+|   |   |   account.info
+|   |   |   Loki_agree_adv.py
+|   |   |   Loki_class_arrangement.py
+|   |   |   Loki_day_off.py
+|   |   |   Loki_disagree_adv.py
+|   |   |   Loki_infrom_time.py
+|   |   |   Loki_online_course.py
+|   |   |   Loki_physical_course.py
+|   |   |   Loki_warm_blessing.py
+|   |   |   Updater.py
+|   |   |   USER_DEFINED.json
+|   |   |   
+|   |   \---__pycache__
+|   |           Loki_agree_adv.cpython-310.pyc
+|   |           Loki_class_arrangement.cpython-310.pyc
+|   |           Loki_day_off.cpython-310.pyc
+|   |           Loki_disagree_adv.cpython-310.pyc
+|   |           Loki_inform_time_adv.cpython-310.pyc
+|   |           Loki_infrom_time.cpython-310.pyc
+|   |           Loki_online_course.cpython-310.pyc
+|   |           Loki_physical_course.cpython-310.pyc
+|   |           Loki_warm_blessing.cpython-310.pyc
+|   |           Tutor_Assist_Bot.cpython-310.pyc
+|   |           
+|   \---__pycache__
+|           Tutor_Assist_Bot.cpython-310.pyc
+|           
+\---ref
+        agree_adv.ref
+        class_arrangement.ref
+        day_off.ref
+        disagree_adv.ref
+        infrom_time.ref
+        online_course.ref
+        physical_course.ref
+        warm_blessing.ref
+        
