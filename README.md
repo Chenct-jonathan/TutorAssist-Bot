@@ -55,7 +55,7 @@
 
 * **Python 3+**
 * **ArticutAPI** ```pip3 install ArticutAPI```
-* [**註冊成為 Droidtown 會員**](https://api.droidtown.co/login/)
+* **註冊成為 [Droidtown](https://api.droidtown.co/login/) 會員**
 
 
 ---
