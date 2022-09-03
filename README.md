@@ -54,8 +54,7 @@
 ---
 
 * **Python 3+**
-* **ArticutAPI：** 
-  ```pip3 install ArticutAPI```
+* **ArticutAPI  **```pip3 install ArticutAPI```
 * [**註冊成為 Droidtown 會員**](https://api.droidtown.co/login/)
 
 
@@ -64,7 +63,7 @@
 
 ---
 
-1. 登入 **[Droidtown](https://api.droidtown.co/login/)** 前往**```服務資訊```**
+1. 登入 **[Droidtown](https://api.droidtown.co/login/)** 前往```**服務資訊**```
 2. 選擇**```Loki```**並**```開始使用```**
 3. 輸入專案名稱並**```建立專案```**
 4. 前往**```專案```**並**```選擇檔案```**
