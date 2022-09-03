@@ -107,13 +107,11 @@
 
 ### 參考資料
 
-
+[卓騰語言科技](https://www.droidtown.co/zh-tw/)
 
 ---
 
 ### 聯絡資訊
-
----
 
 **Jonathan Chen:** chenjonathan901210@gmail.com
 若您有任何疑問，歡迎來信討論，感謝您。
