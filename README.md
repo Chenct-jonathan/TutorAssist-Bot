@@ -69,14 +69,25 @@
 4. 前往```專案```並```選擇檔案```
 5. 選擇```ref```中的所有.py檔案
 6. 開啟並```讀取意圖```
-7. 點選左上房子圖示回到[```Loki控制台```](https://api.droidtown.co/loki/)
-8. ```複製專案金鑰```並填入 ```accout.info``` 中 ```loki-key```欄位
+7. 點選左上房子圖示回到 [**Loki控制台**](https://api.droidtown.co/loki/)
+8. ```複製專案金鑰```並填入 ```account.info``` 中 ```loki-key```欄位
 
 ---
 
 ### 建立 Discord Bot
 
-1. 
+1. 登入[**Discord Developers**](https://discord.com/developers/applications/)並點擊右上角的 ```New Application```
+2. 輸入 ```Name``` 並 ```Create```
+3. 前往 ```Bot``` 並 ```Add Bot```
+4. 到 ```Bot Permissions``` 勾選 ```Sends Messages```及 ```Read Message History```
+5. 複製 ```Token``` 並填入 ```account.info``` 中 ```discord_token```欄位
+6. 將 Bot 加入 Discord 伺服器
+
+---
+
+### 參考資料
+
+
 
 ---
 
