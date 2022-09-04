@@ -136,12 +136,12 @@ class BotClient(discord.Client):
                                     if resultDICT["class_arrangement"]["AlterTimeSpan"] == "unknown":
                                         replySTR="課程時間需要{}到什麼時候呢？".format(resultDICT["class_arrangement"]["EarlyOrLate"])
                                     else:
-                                        replySTR="好的\n課程時間{}{}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTimeSpan"])
+                                        replySTR="好的\n課程時間{} {}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTimeSpan"])
                             else:
                                 if resultDICT["class_arrangement"]["EarlyOrLate"] == "unknown":
-                                    replySTR="好的\n課程時間改到{}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["AlterTime"])
+                                    replySTR="好的\n課程時間改到 {}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["AlterTime"])
                                 else:
-                                    replySTR="好的\n課程時間{}到{}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTime"])
+                                    replySTR="好的\n課程時間{}到 {}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTime"])
                         else:
                             if resultDICT["class_arrangement"]["AlterTime"] == "unknown":
                                 if resultDICT["class_arrangement"]["EarlyOrLate"] == "unknown":
@@ -150,12 +150,12 @@ class BotClient(discord.Client):
                                     if resultDICT["class_arrangement"]["AlterTimeSpan"] == "unknown":
                                         replySTR="{}的時間需要{}到什麼時候呢？".format(resultDICT["class_arrangement"]["Course/Student"],resultDICT["class_arrangement"]["EarlyOrLate"])
                                     else:
-                                        replySTR="好的\n{}的時間{}{}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["Course/Student"],resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTimeSpan"])
+                                        replySTR="好的\n{}的時間{} {}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["Course/Student"],resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTimeSpan"])
                             else:
                                 if resultDICT["class_arrangement"]["EarlyOrLate"] == "unknown":
-                                    replySTR="好的\n{}的時間改到{}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["Course/Student"],resultDICT["class_arrangement"]["AlterTime"])
+                                    replySTR="好的\n{}的時間改到 {}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["Course/Student"],resultDICT["class_arrangement"]["AlterTime"])
                                 else:
-                                    replySTR="好的\n{}的時間{}到{}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["Course/Student"],resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTime"])                            
+                                    replySTR="好的\n{}的時間{}到 {}。\n麻煩您確認一下這樣對嗎？".format(resultDICT["class_arrangement"]["Course/Student"],resultDICT["class_arrangement"]["EarlyOrLate"],resultDICT["class_arrangement"]["AlterTime"])                            
                         self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"] = resultDICT["class_arrangement"]
                     elif "warm_blessing" in resultDICT["intentLIST"]:
                         self.mscDICT[message.author.id]["lastInfoQuest"] = msgSTR
@@ -177,32 +177,32 @@ class BotClient(discord.Client):
                         if "day_off" in self.mscDICT[self.user.id]["savedIntent"]:
                             if self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"] == "unknown":
                                 if self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"] == "unknown":
-                                    replySTR = "課程異動通知：\n{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelTimeText"])
+                                    replySTR = "課程異動通知：\n{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelTimeText"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"])
                                 else:
-                                    replySTR = "課程異動通知：\n{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"])
+                                    replySTR = "課程異動通知：\n{} {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"])
                             else:
                                 if self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"] == "unknown":
-                                    replySTR = "課程異動通知：\n{}{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelTimeText"])
+                                    replySTR = "課程異動通知：\n{}{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelTimeText"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"],)
                                 else:
-                                    replySTR = "課程異動通知：\n{}{}{}\n已轉告老師，感謝您!".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"])
+                                    replySTR = "課程異動通知：\n{} {} {}\n已轉告老師，感謝您!".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelDate"],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["CancelKeyword"])
                         elif "class_arrangement" in self.mscDICT[self.user.id]["savedIntent"]:
                             #replySTR = self.mscDICT[self.user.id]
                             if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"] == "unknown" or self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"] == "":
                                 if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"] == "unknown":
-                                    replySTR = "課程異動通知：\n課程時間{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTimeSpan"])
+                                    replySTR = "課程異動通知：\n課程時間{} {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTimeSpan"])
                                 else: 
                                     if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"]=="unknown":
-                                        replySTR = "課程異動通知：\n課程時間改到{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
+                                        replySTR = "課程異動通知：\n課程時間改到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
                                     else:
-                                        replySTR = "課程異動通知：\n課程時間{}到{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
+                                        replySTR = "課程異動通知：\n課程時間{}到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
                             else:
                                 if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"] == "unknown":
                                     replySTR = "課程異動通知：\n{}的時間{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTimeSpan"])
                                 else: 
                                     if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"]=="unknown":
-                                        replySTR = "課程異動通知：\n{}的時間改到{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
+                                        replySTR = "課程異動通知：\n{}的時間改到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
                                     else:
-                                        replySTR = "課程異動通知：\n{}的時間{}到{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])                                
+                                        replySTR = "課程異動通知：\n{}的時間{}到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])                                
                         elif "online_course" in self.mscDICT[self.user.id]["savedIntent"]:
                             replySTR = "課程異動通知：\n 課程改為線上授課\n已轉告老師，感謝您！"
                         elif "physical_course" in self.mscDICT[self.user.id]["savedIntent"]:
@@ -227,13 +227,13 @@ class BotClient(discord.Client):
                         if "day_off" in self.mscDICT[self.user.id]["savedIntent"]:
                             self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelDate'] = resultDICT["inform_time"]["inform_time_time"]
                             if self.mscDICT[self.user.id]["requiredInfo"]["day_off"]["Course/Student"] == "unknown":
-                                replySTR = "好的\n{}{}\n麻煩您確認一下這樣對嗎？".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelDate'],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelKeyword'])
+                                replySTR = "好的\n{} {}\n麻煩您確認一下這樣對嗎？".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelDate'],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelKeyword'])
                             else:
-                                replySTR = "好的\n{}{}{}\n麻煩您確認一下這樣對嗎？".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelDate'],self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['Course/Student'], self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelKeyword'])
+                                replySTR = "好的\n{} {} {}\n麻煩您確認一下這樣對嗎？".format(self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['Course/Student'], self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelDate'], self.mscDICT[self.user.id]["requiredInfo"]["day_off"]['CancelKeyword'])
                         elif "class_arrangement" in self.mscDICT[self.user.id]["savedIntent"]:
                             #replySTR = resultDICT["inform_time"]["inform_time_time"]
                             self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]['AlterTime'] = resultDICT["inform_time"]["inform_time_time"]
-                            replySTR="好的\n課程時間改到{}\n麻煩您確認一下這樣對嗎？".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]['AlterTime'])
+                            replySTR="好的\n課程時間改到 {}\n麻煩您確認一下這樣對嗎？".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]['AlterTime'])
                 else:
                     replySTR ="感謝您的告知，此次問題 Bot Assistant 較無法處理，為保險起見，會請老師看過後盡速回覆!\n若您想要請假，您可以說：「王小明八月八日英文課請假。」\n若您想要調課，您可以說：「王小明八月八日英文課改到八月十日。」\n若您想要調整上課方式，您可以說：「改成線上上課」或是「恢復實體授課」。"
             self.mscDICT[self.user.id]["latestQuest"] = replySTR
