@@ -1,4 +1,4 @@
-### 建立 Discord Bot
+# 建立 Discord Bot
 
 ---
 
