@@ -65,7 +65,7 @@
   {
       "username" : " 填入 Droidtown 帳號 ",
       "articut_key" : " 填入 Articut 金鑰 ",
-      "loki-key":" 填入 Loki 專案金鑰 ",
+      "loki_key":" 填入 Loki 專案金鑰 ",
       "discord_token":" 填入 Discord Token "
   }
 
@@ -82,7 +82,7 @@
 5. 選擇```ref```中的所有.py檔案
 6. 開啟並```讀取意圖```
 7. 點選左上房子圖示回到 [**Loki控制台**](https://api.droidtown.co/loki/)
-8. ```複製專案金鑰```並填入 ```account.info``` 中 ```loki-key```欄位
+8. ```複製專案金鑰```並填入 ```account.info``` 中 ```loki_key```欄位
 
 ---
 

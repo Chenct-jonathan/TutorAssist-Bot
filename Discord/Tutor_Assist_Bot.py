@@ -70,7 +70,7 @@ except:
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 USERNAME = accountDICT["username"]
-LOKI_KEY = accountDICT["loki-key"]
+LOKI_KEY = accountDICT["loki_key"]
 # 意圖過濾器說明
 # INTENT_FILTER = []        => 比對全部的意圖 (預設)
 # INTENT_FILTER = [intentN] => 僅比對 INTENT_FILTER 內的意圖
