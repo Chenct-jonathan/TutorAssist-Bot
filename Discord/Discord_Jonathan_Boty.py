@@ -131,7 +131,7 @@ class BotClient(discord.Client):
                         if resultDICT["class_arrangement"]["Course/Student"] == "unknown" or resultDICT["class_arrangement"]["Course/Student"] == "":
                             if resultDICT["class_arrangement"]["AlterTime"] == "unknown":
                                 if resultDICT["class_arrangement"]["EarlyOrLate"] == "unknown":
-                                    replySTR = "課程時間需要如何調整呢？若您想要調課，您可以說：「王小明八月八日英文課改到八月十日。」"
+                                    replySTR = "課程時間需要如何調整呢？若您想要調課，您可以說：「王小明的英文課改到八月十日。」"
                                 else:
                                     if resultDICT["class_arrangement"]["AlterTimeSpan"] == "unknown":
                                         replySTR="課程時間需要{}到什麼時候呢？".format(resultDICT["class_arrangement"]["EarlyOrLate"])
@@ -221,7 +221,7 @@ class BotClient(discord.Client):
                         elif "physical_course" in self.mscDICT[self.user.id]["savedIntent"] or "online_course" in self.mscDICT[self.user.id]["savedIntent"]:
                             replySTR = "抱歉，能請您再用中文輸入一次嗎？\n(Bot Assistant 可能尚未學習到以上句型，若您想要調整上課方式，您可以說：「明天英文課改線上上課或是實體授課。」)"
                         else:
-                            replySTR = "抱歉，Bot Assistant 可能尚未學習到以上句型。\n若您想要請假，您可以說：「王小明八月八日英文課請假。」\n若您想要調課，您可以說：「王小明八月八日英文課改到八月十日。」\n若您想要調整上課方式，您可以說：「改成線上上課」或是「恢復實體授課」。"
+                            replySTR = "抱歉，Bot Assistant 可能尚未學習到以上句型。\n若您想要請假，您可以說：「王小明八月八日英文課請假。」\n若您想要調課，您可以說：「王小明今天的英文課改到八月十日。」\n若您想要調整上課方式，您可以說：「改成線上上課」或是「恢復實體授課」。"
                     elif "inform_time" in resultDICT["intentLIST"]:
                         self.mscDICT[message.author.id]["lastInfoQuest"] = msgSTR
                         if "day_off" in self.mscDICT[self.user.id]["savedIntent"]:
@@ -235,7 +235,7 @@ class BotClient(discord.Client):
                             self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]['AlterTime'] = resultDICT["inform_time"]["inform_time_time"]
                             replySTR="好的\n課程時間改到 {}\n麻煩您確認一下這樣對嗎？".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]['AlterTime'])
                 else:
-                    replySTR ="感謝您的告知，此次問題 Bot Assistant 較無法處理，為保險起見，會請老師看過後盡速回覆!\n若您想要請假，您可以說：「王小明八月八日英文課請假。」\n若您想要調課，您可以說：「王小明八月八日英文課改到八月十日。」\n若您想要調整上課方式，您可以說：「改成線上上課」或是「恢復實體授課」。"
+                    replySTR ="感謝您的告知，此次問題 Bot Assistant 較無法處理，為保險起見，會請老師看過後盡速回覆!\n若您想要請假，您可以說：「王小明八月八日英文課請假。」\n若您想要調課，您可以說：「王小明的英文課改到八月十日。」\n若您想要調整上課方式，您可以說：「改成線上上課」或是「恢復實體授課」。"
             self.mscDICT[self.user.id]["latestQuest"] = replySTR
         await message.reply(replySTR)
 
