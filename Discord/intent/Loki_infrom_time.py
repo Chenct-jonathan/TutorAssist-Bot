@@ -38,7 +38,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     resultDICT["inform_time"]={}
     if utterance == "[8].-[10].":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             if len(inputSTR.split("-")) == 2:
                 resultDICT["inform_time"]["inform_time_time"] = args[0]+"到"+args[1]
@@ -56,7 +56,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[8].到[10].":
-        if resultDICT["intentLIST"] == {}:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = args[0]+"到"+args[1]
@@ -71,7 +71,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
                 
 
     if utterance == "[8]:[30]-[10].":
-        if resultDICT["intentLIST"] == {}:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = inputSTR.split("-")[0]+"到"+inputSTR.split("-")[1]
@@ -86,7 +86,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[8]:[30]-[10]:[30]":
-        if resultDICT["intentLIST"] == {}:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = inputSTR.split("-")[0]+"到"+inputSTR.split("-")[1]
@@ -101,7 +101,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
                 
 
     if utterance == "[8]:[30]到[10].":
-        if resultDICT["intentLIST"] == {}:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = args[0]+":"+args[1]+"到"+args[2]
@@ -116,7 +116,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
                 
 
     if utterance == "[8]:[30]到[10]:[30]":
-        if resultDICT["intentLIST"] == {}:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = args[0]+":"+args[1]+"到"+args[2]+":"+args[3]
@@ -131,7 +131,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
                 
 
     if utterance == "[八月][三十]":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0]+args[1]+"日", level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())
@@ -145,7 +145,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
     
     if utterance == "[八月][三十]的[10].-[12].":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0]+args[1]+"日", level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[2]+"到"+args[3]
@@ -159,7 +159,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八月][三十]的[10].到[12].":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0]+args[1]+"日", level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[2]+"到"+args[3]
@@ -173,7 +173,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八月][三十]的[10]:[30]-[12].":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0]+args[1]+"日", level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[2]+":"+args[3]+"到"+args[4]
@@ -187,7 +187,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八月][三十]的[10]:[30]-[12]:[00]":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0]+args[1]+"日", level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[2]+":"+args[3]+"到"+args[4]+":"+args[5]
@@ -201,7 +201,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八月][三十]的[10]:[30]到[12].":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0]+args[1]+"日", level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[2]+":"+args[3]+"到"+args[4]
@@ -215,7 +215,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八月][三十]的[10]:[30]到[12]:[00]":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0]+args[1]+"日", level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[2]+":"+args[3]+"到"+args[4]+":"+args[5]
@@ -229,7 +229,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八月三十日]的[10].-[12].":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0], level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[1]+"到"+args[2]
@@ -243,7 +243,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八月三十日]的[10].到[12].":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0], level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())+"的"+args[1]+"到"+args[2]
@@ -257,7 +257,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         
 
     if utterance == "[八點]-[十點]":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             if len(inputSTR.split("-")) == 2:
                 resultDICT["inform_time"]["inform_time_time"] = inputSTR.split("-")[0]+"到"+inputSTR.split("-")[1]
@@ -278,10 +278,9 @@ def getResult(inputSTR, utterance, args, resultDICT):
                     resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0], level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())
                 except:
                     resultDICT["inform_time"]["inform_time_time"] = inputSTR
-        
 
     if utterance == "[八點]到[十點]":
-        if resultDICT["intentLIST"] == []:
+        if resultDICT["intentLIST"] == [] and len(inputSTR)<= 13:
             resultDICT["intentLIST"].append("inform_time")
             try:
                 resultDICT["inform_time"]["inform_time_time"] = str(datetime.strptime(articut.parse(args[0], level = "lv3")["time"][-1][-1]["datetime"], '%Y-%m-%d %H:%M:%S').date())

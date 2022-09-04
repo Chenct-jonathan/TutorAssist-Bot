@@ -349,5 +349,5 @@ if __name__ == "__main__":
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
     
-    resultDICT = runLoki(["祝妳生日快樂！"])
+    resultDICT = runLoki(["生日快樂歌的歌詞裡面有一句是祝你生日快樂"])
     print(resultDICT)
