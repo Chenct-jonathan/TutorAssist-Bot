@@ -32,219 +32,378 @@ def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     resultDICT["physical_course"] = {}
     if utterance == "[先]到[家][中]上課":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]到[家][中]授課":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]到府上課":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]到府授課":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]到班上課":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]到線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]實體":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]實體課程":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]恢復到班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]恢復實體":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]恢復實體課程":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]恢復線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]恢復進班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
-
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
     if utterance == "[先]恢復面對面":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]恢復面授":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]改到班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
-
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
     if utterance == "[先]改實體":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]改實體課程":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]改線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]改進班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]改面對面":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]改面授":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]用到班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]用實體":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]用實體課程":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]用線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]用進班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]用面對面":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]用面授":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]調整為到班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]調整為實體":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
-
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
     if utterance == "[先]調整為實體課程":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]調整為線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]調整為進班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]調整為面授":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]進班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]面對面":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先]面授":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]到府":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]到班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]實體":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]實體課程":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]進班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]面對面":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "[先都]面授":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "要[先]到班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "要[先]實體":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "要[先]線下":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "要[先]進班":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "要[先]面對面":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "要[先]面授":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     if utterance == "要實體課程":
-        resultDICT["intentLIST"].append("physical_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("physical_course")
+        else:
+            resultDICT["intentLIST"].append("physical_course")
 
     return resultDICT

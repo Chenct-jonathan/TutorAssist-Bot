@@ -73,8 +73,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "錯":
         if len(inputSTR) <= 3:
             if "agree" in resultDICT["intentLIST"]:
-                resultDICT["intentLIST"].remove("agree")
-                resultDICT["intentLIST"].append("disagree")
+                pass
             else:
                 resultDICT["intentLIST"].append("disagree")
         else: 

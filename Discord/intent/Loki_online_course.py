@@ -32,99 +32,171 @@ def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     resultDICT["online_course"] = {}
     if utterance == "[先]恢復線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]恢復視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]恢復遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]改線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]改視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]改遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]用線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]用視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]用遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]維持線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]維持視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]維持遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]調整為線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]調整為視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]調整為遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先]遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先都]線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先都]視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "[先都]遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "要[先]線上":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "要[先]視訊":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     if utterance == "要[先]遠距":
-        resultDICT["intentLIST"].append("online_course")
-        pass
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("online_course")
+        else:
+            resultDICT["intentLIST"].append("online_course")
 
     return resultDICT
