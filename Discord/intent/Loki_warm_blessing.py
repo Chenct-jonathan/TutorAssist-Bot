@@ -72,35 +72,71 @@ def getResult(inputSTR, utterance, args, resultDICT):
                 resultDICT["warm_blessing"]["Holiday"] = "unknown"
 
     if utterance == "[假期]快樂":
-        resultDICT["intentLIST"].append("warm_blessing")
-        infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        try:
-            resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
-        except:
-            resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        else:
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
 
     if utterance == "[假期]愉快":
-        resultDICT["intentLIST"].append("warm_blessing")
-        infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        try:
-            resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
-        except:
-            resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        else:
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(args[0], userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"            
 
     if utterance == "祝[你]":
-        resultDICT["intentLIST"].append("warm_blessing")
-        infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        try:
-            resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
-        except:
-            resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        else:
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"            
 
     if utterance == "祝[老師]":
-        resultDICT["intentLIST"].append("warm_blessing")
-        infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
-        try:
-            resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
-        except:
-            resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        if "inform_time" in resultDICT["intentLIST"]:
+            resultDICT["intentLIST"].remove("inform_time")
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
+        else:
+            resultDICT["intentLIST"].append("warm_blessing")
+            infoDICT = articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")
+            try:
+                resultDICT["warm_blessing"]["Holiday"] = re.search("<TIME_holiday>([^<]+)</TIME_holiday>", "".join(infoDICT["result_pos"])).group(0)
+            except:
+                resultDICT["warm_blessing"]["Holiday"] = "unknown"
 
     return resultDICT

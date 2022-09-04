@@ -189,20 +189,20 @@ class BotClient(discord.Client):
                             #replySTR = self.mscDICT[self.user.id]
                             if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"] == "unknown" or self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"] == "":
                                 if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"] == "unknown":
-                                    replySTR = "課程異動通知：\n課程時間{} {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTimeSpan"])
+                                    replySTR = "課程異動通知：\n課程時間{} {}。\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTimeSpan"])
                                 else: 
                                     if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"]=="unknown":
-                                        replySTR = "課程異動通知：\n課程時間改到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
+                                        replySTR = "課程異動通知：\n課程時間改到 {}。\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
                                     else:
-                                        replySTR = "課程異動通知：\n課程時間{}到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
+                                        replySTR = "課程異動通知：\n課程時間{}到 {}。\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
                             else:
                                 if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"] == "unknown":
-                                    replySTR = "課程異動通知：\n{}的時間{}{}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTimeSpan"])
+                                    replySTR = "課程異動通知：\n{}的時間{}{}。\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTimeSpan"])
                                 else: 
                                     if self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"]=="unknown":
-                                        replySTR = "課程異動通知：\n{}的時間改到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
+                                        replySTR = "課程異動通知：\n{}的時間改到 {}。\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])
                                     else:
-                                        replySTR = "課程異動通知：\n{}的時間{}到 {}\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])                                
+                                        replySTR = "課程異動通知：\n{}的時間{}到 {}。\n已轉告老師，感謝您！".format(self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["Course/Student"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["EarlyOrLate"],self.mscDICT[self.user.id]["requiredInfo"]["class_arrangement"]["AlterTime"])                                
                         elif "online_course" in self.mscDICT[self.user.id]["savedIntent"]:
                             replySTR = "課程異動通知：\n 課程改為線上授課\n已轉告老師，感謝您！"
                         elif "physical_course" in self.mscDICT[self.user.id]["savedIntent"]:

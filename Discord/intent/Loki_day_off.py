@@ -40,7 +40,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
     resultDICT["day_off"] = {}
     if utterance == "[XX][先]休息":
         if "inform_time" in resultDICT["intentLIST"]:
-            resultDICT["intentLIST"].remove("inform_time")        
+            resultDICT["intentLIST"].remove("inform_time")
         resultDICT["intentLIST"].append("day_off")
         infoDICT = articut.parse(inputSTR, level = "lv3")
         try:
