@@ -14,9 +14,15 @@
 
 ---
 
-### Demo
+### 實際操作
 
+---
 
+**操作時，請先和 TutorAssist Bot 打聲簡單的招呼，並且在訊息前標記```@ Bot``` 喔！**
+
+[實際操作範例：](https://youtu.be/slSJLKAhcxs)
+
+<video src="C:\Users\chenj\OneDrive\文件\Bandicam\bandicam 2022-09-08 16-03-52-794.mp4"></video>
 
 ---
 ### 檔案總攬
