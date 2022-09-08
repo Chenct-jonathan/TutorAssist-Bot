@@ -94,6 +94,8 @@
 
 ### 獲取 Aritcut API 金鑰
 
+---
+
 1. 登入 **[Droidtown](https://api.droidtown.co/login/)** 前往```服務資訊```
 2. 選擇```Articut```並```複製 API 金鑰```
 3. 將 ```API 金鑰```填入```account.info``` 中 ```articut_key```欄位
@@ -102,11 +104,15 @@
 
 ### 參考資料
 
+---
+
 [卓騰語言科技](https://www.droidtown.co/zh-tw/)
 
 ---
 
 ### 聯絡資訊
+
+---
 
 **Jonathan Chen:** chenjonathan901210@gmail.com
 若您有任何疑問，歡迎來信討論，感謝您。
