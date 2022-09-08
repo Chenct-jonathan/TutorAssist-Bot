@@ -53,7 +53,7 @@
 
 ---
 
-* **Python 3+**
+* **Python 3.6+**
 
 * **ArticutAPI** ```pip3 install ArticutAPI```
 
