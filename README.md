@@ -28,7 +28,8 @@
 ### 檔案總攬
 ---
 ```
-|   .gitignore ----------------------------------- # .gitignore：避免 account.info 上傳
+|   .gitignore ----------------------------------- # .gitignore：避免 account.info 上傳至 GitHub
+|   Demo Video.mp4 ------------------------------- # Demo Video.mp4：多輪對話操作示範
 |   README.md
 |   requirements.txt ----------------------------- # Modules：包含 ArticutAPI、Discord 及 Regular Expression
 |   
@@ -37,9 +38,9 @@
 |   |   ArticutDemo.py
 |   |   Discord_Jonathan_Boty.py ----------------- # Discord 主程式：處理 Bot 在 Discord 上的運作
 |   |   README.md
-|   |   Tutor_Assist_Bot.py ---------------------- # Loki NLU 主程式：處理語言
+|   |   Tutor_Assist_Bot.py ---------------------- # Loki NLU 主程式：用 Loki 進行自然語言理解
 |   |   
-|   \---intent ----------------------------------- # intent：utterance及語句意圖處理抽取
+|   \---intent ----------------------------------- # intent：utterance 及語句意圖處理抽取
 |           account.info
 |           Loki_agree_adv.py
 |           Loki_class_arrangement.py
