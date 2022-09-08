@@ -22,7 +22,7 @@
 
 [實際操作範例：](https://youtu.be/slSJLKAhcxs)
 
-<video src="C:\Users\chenj\OneDrive\文件\Bandicam\bandicam 2022-09-08 16-03-52-794.mp4"></video>
+<video src="C:\Users\chenj\OneDrive\桌面\TutorAssist_Bot\Demo Video.mp4"></video>
 
 ---
 ### 檔案總攬
