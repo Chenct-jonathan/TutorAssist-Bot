@@ -21,9 +21,7 @@
 **操作時，請先和 TutorAssist Bot 打聲簡單的招呼，並且在訊息前標記```@ Bot``` 喔！**
 
 [實際操作範例：](https://youtu.be/slSJLKAhcxs)
-
-```<video src="C:\Users\chenj\OneDrive\桌面\TutorAssist_Bot\Demo Video.mp4"></video>```
-
+https://user-images.githubusercontent.com/86584322/189075685-3516cef7-e6ee-4d68-b4dc-a35ac9a9c694.mp4
 ---
 ### 檔案總攬
 ---
