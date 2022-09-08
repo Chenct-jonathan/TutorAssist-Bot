@@ -22,7 +22,8 @@
 
 [實際操作範例：](https://youtu.be/slSJLKAhcxs)
 
-https://user-images.githubusercontent.com/86584322/189075685-3516cef7-e6ee-4d68-b4dc-a35ac9a9c694.mp4
+https://user-images.githubusercontent.com/86584322/189077295-0a28a5c4-c595-491b-be0d-ec0649318e5e.mp4
+
 ---
 ### 檔案總攬
 ---
