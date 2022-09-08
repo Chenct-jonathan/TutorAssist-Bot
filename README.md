@@ -18,35 +18,41 @@
 ### 檔案總攬
 ---
 ```
-|
-|
+|   .gitignore ----------------------------------- # .gitignore：避免 account.info 上傳
+|   README.md
+|   requirements.txt ----------------------------- # Modules：包含 ArticutAPI、Discord 及 Regular Expression
+|   
 +---Discord
+|   |   account.info
+|   |   ArticutDemo.py
 |   |   Discord_Jonathan_Boty.py ----------------- # Discord 主程式：處理 Bot 在 Discord 上的運作
-|   |   Tutor_Assist_Bot.py----------------------- # Loki NLU 主程式：處理語言
+|   |   README.md
+|   |   Tutor_Assist_Bot.py ---------------------- # Loki NLU 主程式：處理語言
 |   |   
-|   \---intent------------------------------------ # intent：utterance及語句意圖處理抽取                   
-|       |   Loki_agree_adv.py
-|       |   Loki_class_arrangement.py
-|       |   Loki_day_off.py
-|       |   Loki_disagree_adv.py
-|       |   Loki_infrom_time.py
-|       |   Loki_online_course.py
-|       |   Loki_physical_course.py
-|       |   Loki_warm_blessing.py
-|       |   Updater.py
-|       |   USER_DEFINED.json
-|       |   
-|               
-\---ref------------------------------------------- # ref：可供 Loki 讀取的 ref
-        |   agree_adv.ref
-        |   class_arrangement.ref
-        |   day_off.ref
-        |   disagree_adv.ref
-        |   infrom_time.ref
-        |   online_course.ref
-        |   physical_course.ref
-        |   warm_blessing.ref
+|   \---intent ----------------------------------- # intent：utterance及語句意圖處理抽取
+|           account.info
+|           Loki_agree_adv.py
+|           Loki_class_arrangement.py
+|           Loki_day_off.py
+|           Loki_disagree_adv.py
+|           Loki_infrom_time.py
+|           Loki_online_course.py
+|           Loki_physical_course.py
+|           Loki_warm_blessing.py
+|           Updater.py
+|           USER_DEFINED.json
+|           
+\---ref ------------------------------------------ # ref：可供 Loki 讀取的 ref
+        agree_adv.ref
+        class_arrangement.ref
+        day_off.ref
+        disagree_adv.ref
+        infrom_time.ref
+        online_course.ref
+        physical_course.ref
+        warm_blessing.ref
 ```
+
 ---
 
 ### 環境設定
@@ -55,7 +61,7 @@
 
 * **Python 3.6+**
 
-* **ArticutAPI** ```pip3 install ArticutAPI```
+* **安裝相關套件** ```$ pip install -r requirements.txt```
 
 * **註冊成為 [Droidtown](https://api.droidtown.co/login/) 會員**
 
